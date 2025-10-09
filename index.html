@@ -3,7 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="./src/styles/output.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'primary': '#2563EB',
+              'secondary': '#1E40AF'
+            },
+            fontFamily: {
+              'nunito': ['Nunito', 'sans-serif']
+            }
+          }
+        }
+      }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <title>Document</title>
   </head>
   <!--Body-->
@@ -27,9 +43,11 @@
           >
             <li><a class="hover:text-gray-500" href="#home" data-i18n="home">Home</a></li>
             <li><a class="hover:text-gray-500" href="#features" data-i18n="features">Features</a></li>
+            <li><a class="hover:text-gray-500" href="#about" data-i18n="about">About the App</a></li>
             <li><a class="hover:text-gray-500" href="#plans" data-i18n="plans">Plans</a></li>
             <li><a class="hover:text-gray-500" href="#testimonies" data-i18n="testimonials">Testimonials</a></li>
             <li><a class="hover:text-gray-500" href="#contact" data-i18n="contact">Contact</a></li>
+            <li><a class="hover:text-gray-500" href="#team" data-i18n="team">Team</a></li>
           </ul>
         </div>
 
@@ -151,6 +169,34 @@
                 <span data-i18n="benefit_3_desc">Reduce repair costs and maximize your car's lifespan with proactive and efficient maintenance.</span>
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about"
+        class="bg-white py-16 min-h-screen flex items-center justify-center"
+      >
+        <div
+          class="w-full max-w-6xl flex flex-col md:flex-row items-stretch justify-between gap-3 lg:gap-12 px-4 mx-auto"
+        >
+          <div
+            class="flex-1 flex flex-col items-center justify-center md:justify-start mb-10 md:mb-0"
+          >
+            <h2 class="text-3xl font-extrabold text-center mb-8">
+              <span data-i18n="about_title">About the App</span>
+            </h2>
+            <p class="text-lg text-justify max-w-md">
+              <span data-i18n="about_desc">SafeCar uses advanced IoT technology to connect your vehicle to an intelligent sensor network. These sensors collect real-time data on engine performance, component status, and other key parameters. The information is processed using artificial intelligence algorithms to provide you with accurate diagnostics, personalized alerts, and proactive maintenance recommendations.</span>
+            </p>
+          </div>
+
+          <div class="flex-1 flex items-center justify-center">
+            <iframe
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              title="Demo SafeCar"
+              class="w-full h-80 rounded-xl border border-gray-300 shadow-md"
+              allowfullscreen
+            ></iframe>
           </div>
         </div>
       </section>
@@ -444,35 +490,7 @@
         </div>
       </section>
 
-      <section
-        class="bg-white py-16 min-h-screen flex items-center justify-center"
-      >
-        <div
-          class="w-full max-w-6xl flex flex-col md:flex-row items-stretch justify-between gap-3 lg:gap-12 px-4 mx-auto"
-        >
-          <div
-            class="flex-1 flex flex-col items-center justify-center md:justify-start mb-10 md:mb-0"
-          >
-            <h2 class="text-3xl font-extrabold text-center mb-8">
-              <span data-i18n="about_title">About the App</span>
-            </h2>
-            <p class="text-lg text-justify max-w-md">
-              <span data-i18n="about_desc">SafeCar uses advanced IoT technology to connect your vehicle to an intelligent sensor network. These sensors collect real-time data on engine performance, component status, and other key parameters. The information is processed using artificial intelligence algorithms to provide you with accurate diagnostics, personalized alerts, and proactive maintenance recommendations.</span>
-            </p>
-          </div>
-
-          <div class="flex-1 flex items-center justify-center">
-            <iframe
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-              title="Demo SafeCar"
-              class="w-full h-80 rounded-xl border border-gray-300 shadow-md"
-              allowfullscreen
-            ></iframe>
-          </div>
-        </div>
-      </section>
-
-      <section
+      <section id="team"
         class="bg-[#eaf2fb] py-16 min-h-screen flex items-center justify-center"
       >
         <div
@@ -508,6 +526,8 @@
             <li><a href="#features" class="hover:text-primary" data-i18n="features">Features</a></li>
             <li><a href="#plans" class="hover:text-primary" data-i18n="plans">Plans</a></li>
             <li><a href="#testimonies" class="hover:text-primary" data-i18n="testimonials">Testimonials</a></li>
+            <li><a href="#about" class="hover:text-primary" data-i18n="about">About</a></li>
+            <li><a href="#team" class="hover:text-primary" data-i18n="team">Team</a></li>
             <li><a href="#contact" class="hover:text-primary" data-i18n="contact">Contact</a></li>
           </ul>
         </nav>
@@ -534,14 +554,138 @@
             />
           </a>
         </div>
-        <div class="text-white text-sm text-center">
+        <div class="text-white text-sm text-center flex flex-col sm:flex-row justify-center items-center gap-4">
           <span data-i18n="copyright">© 2025 SafeCar. All rights reserved.</span>
+          <button id="termsBtn" class="text-primary hover:text-secondary underline cursor-pointer" data-i18n="terms_conditions">Terms & Conditions</button>
         </div>
       </div>
     </footer>
 
+    <!-- Modal de Términos y Condiciones -->
+    <div id="termsModal" class="fixed inset-0 bg-black bg-opacity-60 z-50 hidden flex items-center justify-center p-4">
+      <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden shadow-2xl border-4 border-primary">
+        <!-- Header del Modal -->
+        <div class="bg-gradient-to-r from-primary to-secondary text-white p-6">
+          <div class="flex justify-between items-center">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z" />
+                  <path d="M8,12V14H16V12H8M8,16V18H13V16H8Z" />
+                  <circle cx="10" cy="6" r="1" />
+                  <circle cx="12" cy="6" r="1" />
+                  <circle cx="14" cy="6" r="1" />
+                </svg>
+              </div>
+              <h2 class="text-2xl font-bold" data-i18n="terms_conditions_title">Terms and Conditions</h2>
+            </div>
+            <button id="closeModal" class="text-white hover:text-gray-200 text-3xl font-bold transition-colors w-10 h-10 flex items-center justify-center rounded-full hover:bg-white hover:bg-opacity-20">&times;</button>
+          </div>
+        </div>
+        
+        <!-- Contenido del Modal -->
+        <div class="p-6 overflow-y-auto max-h-[60vh]">
+          <div class="space-y-6 text-gray-700">
+            <section class="bg-blue-50 border-l-4 border-primary p-4 rounded-r-lg">
+              <h3 class="text-lg font-bold mb-3 text-primary flex items-center gap-2" data-i18n="terms_acceptance">
+                <span class="w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold">1</span>
+                Acceptance of Terms
+              </h3>
+              <p class="text-gray-600 leading-relaxed" data-i18n="terms_acceptance_desc">By accessing and using SafeCar application, you accept and agree to be bound by the terms and provision of this agreement.</p>
+            </section>
+            
+            <section class="bg-blue-50 border-l-4 border-primary p-4 rounded-r-lg">
+              <h3 class="text-lg font-bold mb-3 text-primary flex items-center gap-2" data-i18n="terms_services">
+                <span class="w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold">2</span>
+                Use of Services
+              </h3>
+              <p class="text-gray-600 leading-relaxed" data-i18n="terms_services_desc">SafeCar provides vehicle monitoring and diagnostic services through IoT technology. You agree to use our services responsibly and in accordance with applicable laws.</p>
+            </section>
+            
+            <section class="bg-blue-50 border-l-4 border-primary p-4 rounded-r-lg">
+              <h3 class="text-lg font-bold mb-3 text-primary flex items-center gap-2" data-i18n="terms_privacy">
+                <span class="w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold">3</span>
+                Privacy and Data
+              </h3>
+              <p class="text-gray-600 leading-relaxed" data-i18n="terms_privacy_desc">We collect and process vehicle data to provide our services. Your privacy is important to us, and we handle your data in accordance with our Privacy Policy.</p>
+            </section>
+            
+            <section class="bg-blue-50 border-l-4 border-primary p-4 rounded-r-lg">
+              <h3 class="text-lg font-bold mb-3 text-primary flex items-center gap-2" data-i18n="terms_liability">
+                <span class="w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold">4</span>
+                Limitation of Liability
+              </h3>
+              <p class="text-gray-600 leading-relaxed" data-i18n="terms_liability_desc">SafeCar shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of our services.</p>
+            </section>
+            
+            <section class="bg-blue-50 border-l-4 border-primary p-4 rounded-r-lg">
+              <h3 class="text-lg font-bold mb-3 text-primary flex items-center gap-2" data-i18n="terms_modifications">
+                <span class="w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold">5</span>
+                Modifications
+              </h3>
+              <p class="text-gray-600 leading-relaxed" data-i18n="terms_modifications_desc">We reserve the right to modify these terms at any time. Changes will be effective immediately upon posting on our website.</p>
+            </section>
+            
+            <section class="bg-blue-50 border-l-4 border-primary p-4 rounded-r-lg">
+              <h3 class="text-lg font-bold mb-3 text-primary flex items-center gap-2" data-i18n="terms_contact">
+                <span class="w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold">6</span>
+                Contact Information
+              </h3>
+              <p class="text-gray-600 leading-relaxed" data-i18n="terms_contact_desc">If you have any questions about these Terms and Conditions, please contact us through our support channels.</p>
+            </section>
+          </div>
+        </div>
+        
+        <!-- Footer del Modal -->
+        <div class="bg-gray-50 border-t-2 border-primary p-6">
+         
+            <div class="flex gap-3 align-center justify-end">
+              <button id="declineTerms" class="bg-gray-200 text-gray-700 px-6 py-2 rounded-lg hover:bg-gray-300 transition-colors font-medium" data-i18n="decline">Decline</button>
+              <button id="acceptTerms" class="bg-gradient-to-r from-primary to-secondary text-white px-8 py-2 rounded-lg hover:from-secondary hover:to-primary transition-all duration-300 shadow-lg font-bold transform hover:scale-105" data-i18n="accept">Accept</button>
+            </div>
+       
+        </div>
+      </div>
+    </div>
+
     <!--Script-->
   <script src="src/js/nav-menu.js"></script>
     <script src="src/js/i18n.js"></script>
+    <script>
+      // Modal de Términos y Condiciones
+      const termsBtn = document.getElementById('termsBtn');
+      const termsModal = document.getElementById('termsModal');
+      const closeModal = document.getElementById('closeModal');
+      const acceptTerms = document.getElementById('acceptTerms');
+      const declineTerms = document.getElementById('declineTerms');
+
+      termsBtn.addEventListener('click', () => {
+        termsModal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      });
+
+      closeModal.addEventListener('click', closeModalFunction);
+      acceptTerms.addEventListener('click', closeModalFunction);
+      declineTerms.addEventListener('click', closeModalFunction);
+
+      function closeModalFunction() {
+        termsModal.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+      }
+
+      // Cerrar modal al hacer clic fuera del contenido
+      termsModal.addEventListener('click', (e) => {
+        if (e.target === termsModal) {
+          closeModalFunction();
+        }
+      });
+
+      // Cerrar modal con la tecla Escape
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !termsModal.classList.contains('hidden')) {
+          closeModalFunction();
+        }
+      });
+    </script>
   </body>
 </html>
