@@ -1,0 +1,1149 @@
+/* --- 1. Variables & Material Theme --- */
+:root {
+    /* Colores Material */
+    --primary: #2563EB;
+    --primary-dark: #1E40AF;
+    --secondary: #FF5722;
+    
+    /* Modo Claro */
+    --bg-body: #F5F7FA;
+    --bg-surface: #FFFFFF;
+    --bg-surface-alt: #EEF2FF;
+    --text-main: #212121;
+    --text-muted: #757575;
+    --border: #E0E0E0;
+    --input-bg: #FAFAFA;
+    
+    /* Sombras (Elevation) */
+    --shadow-1: 0 2px 4px rgba(0,0,0,0.1);
+    --shadow-2: 0 4px 8px rgba(0,0,0,0.12);
+    --shadow-4: 0 8px 16px rgba(0,0,0,0.14);
+}
+
+/* Modo Oscuro */
+body.dark-mode {
+    --bg-body: #121212;
+    --bg-surface: #1E1E1E;
+    --bg-surface-alt: #2D2D2D;
+    --text-main: #E0E0E0;
+    --text-muted: #B0B0B0;
+    --border: #444444;
+    --input-bg: #333333;
+    --shadow-1: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    line-height: 1.6;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* --- 2. Componentes Generales --- */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.section { padding: 80px 0; }
+.bg-alt { background-color: var(--bg-surface-alt); }
+.text-center { text-align: center; }
+.full-width { width: 100%; }
+.mt-large { margin-top: 4rem; }
+.hidden { display: none !important; }
+
+h1, h2, h3, h4, h5 { font-weight: 500; margin-bottom: 0.5rem; }
+a { text-decoration: none; color: inherit; transition: 0.3s; }
+img { max-width: 100%; display: block; }
+ul { list-style: none; }
+
+/* Botones Material */
+.btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 10px 24px; border-radius: 4px; /* Material standard rounded */
+    font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;
+    cursor: pointer; transition: all 0.3s; border: none;
+    box-shadow: var(--shadow-1);
+}
+.btn-primary { background: var(--primary); color: white; }
+.btn-primary:hover { background: var(--primary-dark); box-shadow: var(--shadow-2); transform: translateY(-1px); }
+
+.btn-outlined { background: transparent; border: 1px solid var(--primary); color: var(--primary); box-shadow: none; }
+.btn-outlined:hover { background: rgba(37, 99, 235, 0.08); }
+
+.icon-btn { background: none; border: none; color: var(--text-main); cursor: pointer; padding: 8px; border-radius: 50%; }
+.icon-btn:hover { background: rgba(128,128,128,0.1); }
+.icon-btn-light { background: none; border: none; color: white; cursor: pointer; }
+
+/* --- 3. Header & Navigation --- */
+.app-bar {
+    /* Fondo semi-transparente para efecto vidrio */
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px); /* Efecto desenfoque estilo iOS/MacOS */
+    -webkit-backdrop-filter: blur(12px); /* Soporte Safari */
+    
+    height: 70px; /* Un poco más alto inicialmente para dar aire */
+    position: sticky; 
+    top: 0; 
+    z-index: 1000;
+    
+    /* Transición suave para cuando se haga scroll */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+/* Estado cuando el usuario baja (Scrolled) - Se activa con JS */
+.app-bar.scrolled {
+    height: 64px; /* Se compacta */
+    background: rgba(255, 255, 255, 0.95); /* Más opaco para lectura */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08); /* Sombra suave */
+}
+
+/* Ajustes para Modo Oscuro */
+body.dark-mode .app-bar {
+    background: rgba(18, 18, 18, 0.85);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+body.dark-mode .app-bar.scrolled {
+    background: rgba(30, 30, 30, 0.95);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.nav-container { 
+    height: 100%; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 0 20px; 
+}
+
+.logo { 
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+    font-size: 1.25rem; 
+    font-weight: 700; 
+    color: var(--primary); 
+    text-decoration: none;
+}
+.logo img { height: 32px; }
+
+/* Links de Navegación */
+.nav-links { display: flex; gap: 24px; }
+
+.nav-link { 
+    font-size: 0.9rem; 
+    font-weight: 500; 
+    text-transform: uppercase; 
+    color: var(--text-muted); 
+    position: relative; /* Necesario para la línea animada */
+    padding: 5px 0;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+/* Animación de línea inferior (Underline) */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary);
+    transition: width 0.3s ease;
+}
+
+/* Estados Hover y Active (ScrollSpy) */
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary);
+}
+
+.nav-link.active::after {
+    width: 100%; /* La línea crece al 100% cuando está activo */
+}
+
+/* Acciones del Navbar (Botones derechos) */
+.nav-actions { display: flex; align-items: center; gap: 12px; }
+
+.lang-text { font-size: 0.8rem; font-weight: bold; margin-left: 5px; }
+
+/* Nuevo Botón Pequeño (Login) */
+.btn-sm {
+    padding: 6px 16px;
+    font-size: 0.85rem;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Utilidad para ocultar login en móviles muy pequeños */
+@media (max-width: 600px) {
+    .desktop-only { display: none; }
+    
+    /* Ajustes del menú móvil para que no se rompa con el glassmorphism */
+    .nav-links {
+        background: var(--bg-surface); /* Fondo sólido en móvil */
+        gap: 0;
+    }
+}
+
+
+/* --- 4. Hero --- */
+.hero {
+    height: 90vh; position: relative;
+    display: flex; align-items: center; justify-content: center;
+    background-image: url('../img/safecar-hero-driving-inteligente.webp');
+    background-size: cover; background-position: center;
+    color: white; text-align: center;
+}
+.hero-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.6); }
+.hero-content { position: relative; z-index: 1; max-width: 800px; padding: 20px; }
+.hero h1 { font-size: 3rem; margin-bottom: 20px; }
+.hero p { font-size: 1.25rem; margin-bottom: 30px; opacity: 0.9; }
+.hero-buttons { display: flex; gap: 15px; justify-content: center; }
+.hero .btn-outlined { border-color: white; color: white; }
+.hero .btn-outlined:hover { background: rgba(255,255,255,0.1); }
+
+/* --- 5. Features (Split) --- */
+.section-title { text-align: center; color: var(--primary); font-size: 2rem; margin-bottom: 10px; }
+.section-subtitle { text-align: center; color: var(--text-muted); margin-bottom: 50px; }
+
+.features-split { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.col-title { border-bottom: 2px solid var(--primary); padding-bottom: 10px; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+
+.card {
+    background: var(--bg-surface); padding: 24px; border-radius: 8px;
+    box-shadow: var(--shadow-1); margin-bottom: 20px; transition: 0.3s;
+}
+.card:hover { transform: translateY(-3px); box-shadow: var(--shadow-2); }
+.card-icon { font-size: 2.5rem; color: var(--primary); margin-bottom: 15px; }
+
+/* --- 6. Plans (Pricing) --- */
+.pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+.pricing-card {
+    background: var(--bg-surface); border-radius: 8px; box-shadow: var(--shadow-1);
+    display: flex; flex-direction: column; position: relative; transition: 0.3s;
+}
+
+
+
+/* --- PRICING CARDS --- */
+.pricing-grid {
+    display: grid;
+    /* Ajuste responsivo */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    align-items: flex-start; /* Alinea las tarjetas arriba */
+}
+
+.pricing-card {
+    background: var(--bg-surface);
+    border-radius: 12px;
+    box-shadow: var(--shadow-1);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    /* Transición suave para el efecto de zoom */
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+    border: 1px solid transparent; /* Evita saltos al agregar bordes */
+    overflow: hidden;
+}
+
+/* EFECTO HOVER: Aumentar tamaño */
+.pricing-card:hover {
+    transform: scale(1.05); /* Incrementa el tamaño un 5% */
+    box-shadow: var(--shadow-4); /* Sombra más profunda al levantar */
+    z-index: 10; /* Asegura que quede por encima de otros elementos */
+}
+
+/* Tarjeta Popular (Professional) */
+.pricing-card.popular {
+    border: 2px solid var(--primary);
+    /* Opcional: Si quieres que por defecto sea un poquito más grande, descomenta: */
+    /* transform: scale(1.02); */
+}
+/* Al hacer hover en la popular, aseguramos que crezca también */
+.pricing-card.popular:hover {
+    transform: scale(1.07); 
+}
+
+.card-header {
+    padding: 30px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+    background-color: rgba(37, 99, 235, 0.03); /* Color primario muy suave */
+}
+
+.card-header h3 {
+    color: var(--primary);
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin: 10px 0;
+}
+
+.period {
+    font-size: 1rem;
+    color: var(--text-muted);
+    font-weight: 400;
+}
+
+.plan-desc {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-top: 10px;
+}
+
+.card-body {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Hace que el botón se vaya al fondo si hay diferentes alturas */
+}
+
+.feature-list {
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.feature-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    color: var(--text-main);
+    font-size: 0.95rem;
+}
+
+.check {
+    color: #10B981; /* Verde Material Design */
+    font-size: 1.2rem;
+}
+
+
+
+/* --- 7. Team (Grid Centrado) --- */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Auto ajuste */
+    gap: 40px;
+    justify-content: center; /* Centrar grid */
+    text-align: center;
+    max-width: 1000px; /* Limitar ancho para que se vea compacto */
+    margin: 0 auto;
+}
+.team-member img {
+    width: 150px; height: 150px; border-radius: 50%; object-fit: cover;
+    margin: 0 auto 15px; border: 3px solid var(--primary);
+}
+.role { color: var(--text-muted); font-size: 0.9rem; display: block; }
+
+.video-team-container { max-width: 800px; margin: 0 auto; }
+.team-video { width: 100%; height: 400px; border: none; border-radius: 12px; box-shadow: var(--shadow-2); }
+
+/* --- CONTACT SECTION (Updated) --- */
+.contact-wrapper {
+    background: var(--bg-surface);
+    border-radius: 12px;
+    overflow: hidden; /* Para que el borde redondeado corte el fondo de color */
+    display: flex;
+    flex-wrap: wrap; /* Responsive: se apilan en móvil */
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Columna Izquierda (Info) */
+.contact-info-col {
+    background: var(--primary); /* Fondo Azul */
+    color: white;
+    flex: 1;
+    min-width: 300px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+/* Patrón decorativo opcional (un círculo sutil) */
+.contact-info-col::before {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.contact-info-col h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.contact-info-col p { opacity: 0.9; line-height: 1.6; }
+
+.info-list { margin-top: 40px; margin-bottom: 40px; }
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.icon-circle {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-item .label {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    opacity: 0.7;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.info-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 20px;
+    font-size: 0.9rem;
+}
+.small-icon { font-size: 1rem; vertical-align: middle; margin-right: 5px; }
+
+
+/* Columna Derecha (Formulario) */
+.contact-form-col {
+    flex: 1.5; /* Ocupa más espacio que la info */
+    min-width: 320px;
+    padding: 40px;
+    background: var(--bg-surface);
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+@media (max-width: 600px) {
+    .form-row { flex-direction: column; gap: 0; }
+}
+
+/* Ajustes Inputs Material */
+.input-group select {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 1rem;
+    color: var(--text-main);
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #999;
+    outline: none;
+    appearance: none; /* Quita flecha nativa */
+    cursor: pointer;
+}
+
+.select-group { position: relative; }
+.select-arrow {
+    position: absolute;
+    right: 0;
+    top: 10px;
+    pointer-events: none;
+    color: var(--text-muted);
+}
+
+/* Label flotante para Select */
+.input-group select:focus ~ label,
+.input-group select:not(:placeholder-shown) ~ label,
+.input-group select:valid ~ label { /* Truco para detectar selección */
+    top: -20px;
+    font-size: 0.85rem;
+    color: var(--primary);
+}
+
+/* Botón de envío con icono */
+.btn-primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+
+/* Material Inputs */
+.input-group { position: relative; margin-bottom: 30px; }
+.input-group input, 
+.input-group textarea {
+    width: 100%; padding: 10px 0; font-size: 1rem;
+    color: var(--text-main); background: transparent;
+    border: none; border-bottom: 1px solid #999;
+    outline: none; transition: 0.3s;
+}
+.input-group label {
+    position: absolute; top: 10px; left: 0;
+    color: #999; pointer-events: none; transition: 0.3s ease all;
+}
+.input-group input:focus, .input-group textarea:focus { border-bottom: 2px solid var(--primary); }
+.input-group input:focus ~ label, .input-group input:not(:placeholder-shown) ~ label,
+.input-group textarea:focus ~ label, .input-group textarea:not(:placeholder-shown) ~ label {
+    top: -20px; font-size: 0.85rem; color: var(--primary);
+}
+
+
+
+
+/* --- FOOTER --- */
+.app-footer {
+    background-color: #111827; /* Gris muy oscuro/Negro suave */
+    color: #9CA3AF; /* Texto gris claro para buen contraste */
+    padding: 60px 0 20px;
+    font-size: 0.95rem;
+}
+
+.footer-top {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 40px;
+    margin-bottom: 20px;
+}
+
+.footer-grid {
+    display: grid;
+    /* Grid responsivo: 1 col en móvil, 2 en tablet, 4 en desktop */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+}
+
+/* Columna de Marca */
+.brand-col p {
+    margin: 20px 0;
+    line-height: 1.5;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.footer-logo img { height: 32px; }
+
+.social-links { display: flex; gap: 15px; }
+.social-links img { 
+    width: 24px; 
+    height: 24px; 
+    opacity: 0.7; 
+    transition: 0.3s;
+    filter: invert(1); /* Vuelve blancos los iconos negros */
+}
+.social-links a:hover img { opacity: 1; transform: translateY(-2px); }
+
+/* Columnas de Enlaces */
+.footer-col h4 {
+    color: white;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.footer-col ul li { margin-bottom: 12px; }
+
+.footer-col a, 
+.footer-link-btn {
+    color: #9CA3AF;
+    transition: 0.3s;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: inherit;
+    padding: 0;
+    text-align: left;
+}
+
+.footer-col a:hover, 
+.footer-link-btn:hover {
+    color: var(--primary); /* Azul SafeCar */
+    text-decoration: underline;
+}
+
+.footer-bottom { text-align: center; font-size: 0.85rem; opacity: 0.6; }
+
+/* --- MODAL UPDATES --- */
+/* ================= MODAL CORREGIDO ================= */
+.modal-overlay {
+    /* 1. Posicionamiento OBLIGATORIO para cubrir la pantalla */
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* 2. Capa superior (Z-Index alto para estar encima de todo) */
+    z-index: 9999; 
+    
+    /* 3. Centrado del contenido */
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    
+    /* 4. Diseño visual del fondo */
+    background: rgba(0, 0, 0, 0.8); 
+    backdrop-filter: blur(4px); 
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Clase para ocultarlo (El JS la pone y la quita) */
+.modal-overlay.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none; /* Evita clicks cuando está oculto */
+    /* NO uses display: none si quieres transición suave, 
+       pero si prefieres simpleza, usa: display: none !important; */
+}
+
+.modal-content {
+    background: var(--bg-surface);
+    width: 90%;
+    max-width: 600px;
+    max-height: 85vh; /* Altura máxima para evitar desbordes */
+    border-radius: 8px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    
+    /* Flex para manejar el scroll interno correctamente */
+    display: flex;
+    flex-direction: column;
+    position: relative; /* Para que el z-index interno funcione */
+}
+
+/* El header se queda fijo arriba */
+.modal-header {
+    background: var(--primary);
+    color: white;
+    padding: 20px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    flex-shrink: 0; /* Evita que el header se aplaste */
+}
+
+/* El cuerpo hace scroll si el texto es muy largo */
+.scrollable-content {
+    padding: 30px;
+    overflow-y: auto; /* Habilita el scroll vertical */
+    line-height: 1.7;
+    color: var(--text-main);
+}
+
+.modal-footer {
+    padding: 20px;
+    border-top: 1px solid var(--border);
+    text-align: right;
+    flex-shrink: 0;
+}
+
+
+
+/* Cuerpo con Scroll para términos largos */
+.scrollable-content {
+    padding: 30px;
+    overflow-y: auto; /* Scroll interno */
+    line-height: 1.7;
+    color: var(--text-main);
+}
+
+.scrollable-content h4 {
+    color: var(--primary);
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.last-updated {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 10px;
+}
+
+
+/* Hero Actions: Organización */
+.hero-actions {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    margin-top: 30px;
+    flex-wrap: wrap; /* Para móviles */
+}
+
+.action-label {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+.store-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+/* Estilo Botón Tienda (Transparente con borde blanco) */
+.btn-store {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: white;
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-store:hover {
+    background: white;
+    color: var(--primary);
+    transform: translateY(-2px);
+}
+
+
+.testimonials-grid {
+    display: grid;
+    /* Responsive: columnas automáticas de mínimo 300px */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.testimonial-card {
+    background: var(--bg-surface);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-2);
+    border-color: rgba(37, 99, 235, 0.2); /* Color primario suave */
+}
+
+.quote-icon span {
+    font-size: 2rem;
+    color: var(--primary);
+    opacity: 0.3;
+}
+
+.testimonial-card p {
+    font-style: italic;
+    margin: 15px 0 25px;
+    color: var(--text-main);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-top: 1px solid var(--border);
+    padding-top: 15px;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+/* --- TEAM GRID (Alineado y Centrado) --- */
+.team-grid {
+    display: flex;
+    flex-wrap: wrap; /* Permite que bajen a la siguiente línea */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    gap: 40px; /* Espacio entre tarjetas */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.team-member {
+    background: var(--bg-surface);
+    padding: 30px 20px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-1);
+    width: 240px; /* Ancho fijo para alineación perfecta */
+    text-align: center;
+    transition: transform 0.3s ease;
+    border-top: 4px solid var(--primary); /* Toque estético superior */
+}
+
+.team-member:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-2);
+}
+
+.member-photo-wrapper img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid var(--border); /* Borde sutil */
+    padding: 3px; /* Espacio entre foto y borde */
+}
+
+.team-member h4 {
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.team-member .role {
+    color: var(--primary);
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+
+
+/* --- HOW IT WORKS (Process) --- */
+.mb-5 { margin-bottom: 3rem; }
+
+.process-grid {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.process-card {
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+
+.step-number {
+    font-size: 4rem;
+    font-weight: 900;
+    color: var(--border); /* Color gris suave */
+    opacity: 0.3;
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 0;
+}
+
+.icon-wrapper {
+    width: 80px;
+    height: 80px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    box-shadow: var(--shadow-2);
+    position: relative;
+    z-index: 1; /* Encima del número */
+    border: 2px solid var(--primary);
+}
+
+.icon-wrapper .material-icons {
+    font-size: 2.5rem;
+    color: var(--primary);
+}
+
+.process-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--text-main);
+}
+
+.process-card p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+/* Flechas conectoras */
+.process-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 150px; /* Altura aproximada para alinear con iconos */
+    color: var(--primary);
+    opacity: 0.5;
+}
+.process-arrow .material-icons { font-size: 2rem; }
+
+/* Video Showcase */
+.video-showcase {
+    max-width: 900px;
+    margin: 60px auto 0;
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    background: black;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.caption-text {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-top: 10px;
+}
+
+.elevation-4 { box-shadow: var(--shadow-4); }
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .process-arrow { display: none; } /* Ocultar flechas en tablets/móviles */
+    .process-grid { flex-direction: column; align-items: center; }
+    .process-card { margin-bottom: 30px; }
+}
+
+
+/* --- TEAM VIDEO SECTION --- */
+.team-video-section {
+    margin-top: 4rem; /* Espacio generoso desde las fotos */
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Línea separadora sutil */
+.divider-line {
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--border), transparent);
+    width: 80%;
+    margin: 0 auto 3rem; /* 3rem de espacio debajo de la línea */
+    opacity: 0.6;
+}
+
+.subsection-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+/* Reutilizamos .video-wrapper y .video-showcase de la sección anterior.
+   Si no los copiaste antes, asegúrate de tener esto: */
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    background: black;
+    box-shadow: var(--shadow-2);
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.app-bar.scrolled {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Sombra más fuerte al hacer scroll */
+    background-color: var(--bg-surface); /* Asegura que tenga fondo */
+}
+
+
+/* --- CORPORATE SECTION (Formal Style) --- */
+.bg-white {
+    background-color: #FFFFFF;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.corporate-header {
+    margin-bottom: 40px;
+}
+
+.corp-label {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.corp-title {
+    font-size: 2.5rem;
+    color: #1a1f2b; /* Azul oscuro casi negro (tono industrial) */
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.corp-divider {
+    width: 60px;
+    height: 4px;
+    background-color: var(--primary); /* Tu azul corporativo */
+    border-radius: 2px;
+}
+
+.corp-description {
+    max-width: 900px;
+    margin-bottom: 50px;
+}
+
+.corp-description p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--text-main);
+    border-left: 4px solid var(--border); /* Estilo reporte técnico */
+    padding-left: 20px;
+}
+
+/* Grid Formal */
+.corp-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.corp-card {
+    background-color: #F8FAFC; /* Gris muy claro, limpio */
+    border: 1px solid #E2E8F0;
+    padding: 35px;
+    border-radius: 4px; /* Bordes menos redondeados = más formal */
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.corp-card:hover {
+    border-color: var(--primary);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Iconos sobrios */
+.card-icon-wrapper {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.card-icon-wrapper .material-icons {
+    color: var(--primary);
+    font-size: 1.5rem;
+}
+
+.corp-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1a1f2b;
+    margin-bottom: 15px;
+}
+
+.corp-card p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    text-align: justify; /* Justificado para look de documento */
+}
+
+/* Modo Oscuro Ajustes */
+body.dark-mode .bg-white { background-color: var(--bg-surface); }
+body.dark-mode .corp-title { color: var(--text-main); }
+body.dark-mode .corp-card { background-color: #1e293b; border-color: #334155; }
+body.dark-mode .card-icon-wrapper { background-color: #0f172a; border-color: #334155; }
+
+
+
+/* --------------------------------------------*/
+
+
+@media (max-width: 768px) {
+    .hero-actions { gap: 30px; flex-direction: column; }
+    .store-buttons { justify-content: center; }
+}
+
+
+/* --- 10. Responsive --- */
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed; top: 64px; left: 0; right: 0;
+        background: var(--bg-surface); flex-direction: column;
+        padding: 20px; box-shadow: var(--shadow-2);
+        transform: translateY(-150%); transition: 0.3s;
+    }
+    .nav-links.active { transform: translateY(0); }
+    .mobile-only { display: block; }
+    .features-split { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 2rem; }
+    .hero-buttons { flex-direction: column; }
+    .pricing-card.popular { transform: none; }
+}
+@media (min-width: 769px) { .mobile-only { display: none; } }

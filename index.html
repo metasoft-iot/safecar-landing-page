@@ -1,795 +1,674 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              'primary': '#2563EB',
-              'secondary': '#1E40AF'
-            },
-            fontFamily: {
-              'nunito': ['Nunito', 'sans-serif']
-            }
-          }
-        }
-      }
-    </script>
 
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
-    <title>SafeCar</title>
-  </head>
-  <!--Body-->
-  <body class="font-nunito">
-    <!--Header-->
-    <header class="bg-white py-4">
-      <nav class="flex justify-between items-center w-[92%] mx-auto">
-        <!--Logo-->
-        <div>
-          <a class="w-16 cursor-pointer font-bold text-xl lg:text-2xl"
-            >SafeCar</a
-          >
-        </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <!--Nav Links-->
-        <div
-          class="nav-links z-20 duration-300 md:static absolute bg-white md:min-h-fit min-h-[45vh] left-0 top-[-100%] md:w-auto w-full flex items-center px-5"
-        >
-          <ul
-            class="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8"
-          >
-            <li><a class="hover:text-gray-500" href="#home" data-i18n="home">Home</a></li>
-            <li><a class="hover:text-gray-500" href="#features" data-i18n="features">Features</a></li>
-            <li><a class="hover:text-gray-500" href="#about" data-i18n="about">About the App</a></li>
-            <li><a class="hover:text-gray-500" href="#plans" data-i18n="plans">Plans</a></li>
-            <li><a class="hover:text-gray-500" href="#testimonies" data-i18n="testimonials">Testimonials</a></li>
-            <li><a class="hover:text-gray-500" href="#contact" data-i18n="contact">Contact</a></li>
-            <li><a class="hover:text-gray-500" href="#team" data-i18n="team">Team</a></li>
-          </ul>
-        </div>
+    <meta name="description"
+        content="SafeCar: IoT Solution connecting drivers with trusted mechanics. Real-time diagnostics and workshop management.">
+    <meta name="keywords" content="IoT, OBDII, Car Maintenance, Mechanic Workshop, Predictive Analysis">
+    <meta name="author" content="MetaSoft Team">
 
-        <!--Social Icons-->
-        <div class="flex items-center gap-6">
+    <title>SafeCar | Intelligent Vehicle Maintenance</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+
+    <header class="app-bar">
+        <nav class="nav-container">
+            <a href="#" class="logo">
+                <img src="assets/img/safecar-logo.webp" alt="SafeCar Logo">
+                <span>SafeCar</span>
+            </a>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home" class="nav-link" data-i18n="home">Home</a></li>
+                <li><a href="#features" class="nav-link" data-i18n="features">Features</a></li>
+                <li><a href="#plans" class="nav-link" data-i18n="plans">For Workshops</a></li>
+                <li><a href="#about" class="nav-link" data-i18n="about">About</a></li>
+                <li><a href="#testimonials" class="nav-link" data-i18n="testimonials">Testimonials</a></li>
+                <li><a href="#team" class="nav-link" data-i18n="team">Team</a></li>
+                <li><a href="#contact" class="nav-link" data-i18n="contact">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+    <a href="https://safecar-web-app.vercel.app" target="_blank" class="btn btn-sm btn-primary desktop-only" style="margin-right: 10px;">
         
-          <button id="lang_toggle" aria-label="Change language" class="focus:outline-none">
-            <img src="assets/svg/global.svg" alt="Global" id="lang_icon" class="w-8 h-8 transition-all" />
-          </button>
+        <span data-i18n="nav_login">Login</span>
+    </a>
 
-          <!--Menu Icon-->
-          <img
-            id="menuIcon"
-            src="./assets/svg/burger-simple-svgrepo-com.svg"
-            alt="Menu"
-            class="w-8 h-8 cursor-pointer md:hidden"
-            onclick="onToggleMenu()"
-          />
-        </div>
-      </nav>
+    <button id="theme_toggle" class="icon-btn" aria-label="Toggle Dark Mode">
+        <span class="material-icons">dark_mode</span>
+    </button>
+    <button id="lang_toggle" class="icon-btn" aria-label="Change Language">
+        <span class="material-icons">language</span>
+        <span id="current_lang_label" class="lang-text">EN</span>
+    </button>
+    <button id="menu_btn" class="icon-btn mobile-only" aria-label="Open Menu">
+        <span class="material-icons">menu</span>
+    </button>
+</div>
+        </nav>
     </header>
 
-    <main class="bg-gray-500">
-      <section id="home" class="relative flex items-center justify-center min-h-[95vh]">
-        <img
-          src="./assets/img/safecar-hero-driving-inteligente.webp"
-          alt="SafeCar Hero"
-          class="absolute inset-0 w-full h-full object-cover brightness-75"
-        />
-        <div
-          class="relative z-10 flex flex-col items-center justify-center text-center px-4"
-        >
-          <h1
-            class="text-white font-extrabold text-4xl md:text-6xl mb-6 drop-shadow-lg"
-          >
-            <span data-i18n="hero_title">Drive Smart, Travel Safe</span>
-          </h1>
-          <p
-            class="text-white text-lg md:text-2xl mb-8 drop-shadow-lg max-w-3xl"
-          >
-            <span data-i18n="hero_desc">SafeCar gives you a complete view of your vehicle's status in real time, with smart alerts and predictive maintenance for a safer and more efficient driving experience.</span>
-          </p>
-          <a
-            href="https://safecar-v1.netlify.app/"
-            class="bg-primary hover:bg-secondary text-white font-bold py-3 px-8 rounded-lg text-lg shadow-lg transition-colors"
-          >
-            <span data-i18n="discover">Discover SafeCar</span>
-          </a>
-        </div>
-      </section>
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+    <h1 data-i18n="hero_title">Smart Data for Drivers & Mechanics</h1>
+    <p data-i18n="hero_desc">SafeCar gives you a complete view of your vehicle's status...</p>
+    
+    <div class="hero-actions">
+        <div class="action-group">
+    <p class="action-label" data-i18n="for_workshops">For Workshops</p>
+    
+    <a href="https://safecar-web-app.vercel.app" target="_blank" class="btn btn-primary full-width" data-i18n="access_dashboard">
+        <span class="material-icons" style="margin-right: 8px; font-size: 1.2rem;">login</span>
+        Access Dashboard
+    </a>
+</div>
 
-      <section id="features"
-        class="bg-white py-16 min-h-[100vh] flex items-center justify-center"
-      >
-        <div class="max-w-6xl w-full mx-auto px-4">
-          <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-4">
-            <span data-i18n="benefits_title">Benefits that make the difference</span>
-          </h2>
-          <p class="text-center text-lg md:text-xl text-gray-800 mb-12">
-            <span data-i18n="benefits_desc">With SafeCar, you not only take care of your vehicle, you also gain peace of mind and save time and money.</span>
-          </p>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Beneficio 1 -->
-            <div
-              class="bg-white rounded-2xl border-4 border-gray-100 p-8 flex flex-col items-center shadow-sm"
-            >
-              <span class="mb-6">
-                <img
-                  src="./assets/svg/benefit_1.svg"
-                  alt="Seguridad Mejorada"
-                  class="w-16 h-16"
-                />
-              </span>
-              <h3 class="text-xl font-bold mb-3 text-center">
-                <span data-i18n="benefit_1">Enhanced Safety</span>
-              </h3>
-              <p class="text-gray-700 text-center">
-                <span data-i18n="benefit_1_desc">Anticipate potential problems and receive early alerts to avoid breakdowns and ensure your safety on the road.</span>
-              </p>
+        <div class="action-group">
+            <p class="action-label" data-i18n="for_drivers">For Drivers</p>
+            <div class="store-buttons">
+                <a href="https://play.google.com/store" target="_blank" class="btn btn-store" aria-label="Download on Google Play">
+                    <span class="material-icons">android</span>
+                    <span>Google Play</span>
+                </a>
+                <a href="https://apps.apple.com" target="_blank" class="btn btn-store" aria-label="Download on App Store">
+                    <span class="material-icons">phone_iphone</span> 
+                    <span>App Store</span>
+                </a>
             </div>
-            <!-- Beneficio 2 -->
-            <div
-              class="bg-white rounded-2xl border-4 border-gray-100 p-8 flex flex-col items-center shadow-sm"
-            >
-              <span class="mb-6">
-                <img
-                  src="./assets/svg/benefit_2.svg"
-                  alt="Mantenimiento Inteligente"
-                  class="w-16 h-16"
-                />
-              </span>
-              <h3 class="text-xl font-bold mb-3 text-center">
-                <span data-i18n="benefit_2">Smart Maintenance</span>
-              </h3>
-              <p class="text-gray-700 text-center">
-                <span data-i18n="benefit_2_desc">Optimize your vehicle's performance with accurate diagnostics and personalized maintenance recommendations.</span>
-              </p>
-            </div>
-            <!-- Beneficio 3 -->
-            <div
-              class="bg-white rounded-2xl border-4 border-gray-100 p-8 flex flex-col items-center shadow-sm"
-            >
-              <span class="mb-6">
-                <img
-                  src="./assets/svg/benefit_3.svg"
-                  alt="Ahorro de Tiempo y Dinero"
-                  class="w-16 h-16"
-                />
-              </span>
-              <h3 class="text-xl font-bold mb-3 text-center">
-                <span data-i18n="benefit_3">Save Time and Money</span>
-              </h3>
-              <p class="text-gray-700 text-center">
-                <span data-i18n="benefit_3_desc">Reduce repair costs and maximize your car's lifespan with proactive and efficient maintenance.</span>
-              </p>
-            </div>
-          </div>
         </div>
-      </section>
+    </div>
+</div>
+        </section>
 
-      <section id="about"
-        class="bg-white py-16 min-h-screen flex items-center justify-center"
-      >
-        <div
-          class="w-full max-w-6xl flex flex-col md:flex-row items-stretch justify-between gap-3 lg:gap-12 px-4 mx-auto"
-        >
-          <div
-            class="flex-1 flex flex-col items-center justify-center md:justify-start mb-10 md:mb-0"
-          >
-            <h2 class="text-3xl font-extrabold text-center mb-8">
-              <span data-i18n="about_title">About the App</span>
-            </h2>
-            <p class="text-lg text-justify max-w-md">
-              <span data-i18n="about_desc">SafeCar uses advanced IoT technology to connect your vehicle to an intelligent sensor network. These sensors collect real-time data on engine performance, component status, and other key parameters. The information is processed using artificial intelligence algorithms to provide you with accurate diagnostics, personalized alerts, and proactive maintenance recommendations.</span>
+        <section id="features" class="section">
+    <div class="container">
+        <h2 class="section-title" data-i18n="benefits_title">Solutions for Everyone</h2>
+        <p class="section-subtitle" data-i18n="benefits_desc">Comprehensive IoT benefits for car owners and service providers.</p>
+
+        <div class="features-split">
+            
+            <div class="feature-col">
+                <h3 class="col-title">
+                    <span class="material-icons">directions_car</span> 
+                    <span data-i18n="for_drivers">For Drivers</span>
+                </h3>
+                
+                <div class="card feature-card">
+                    <span class="material-icons card-icon">notifications_active</span>
+                    <h4 data-i18n="benefit_1">Real-Time Alerts</h4>
+                    <p data-i18n="benefit_1_desc">Anticipate potential problems and receive early alerts to avoid breakdowns.</p>
+                </div>
+
+                <div class="card feature-card">
+                    <span class="material-icons card-icon">event_available</span>
+                    <h4 data-i18n="benefit_driver_schedule">Easy Scheduling</h4>
+                    <p data-i18n="benefit_driver_schedule_desc">Book appointments with trusted workshops directly from the app instantly.</p>
+                </div>
+
+                <div class="card feature-card">
+                    <span class="material-icons card-icon">tips_and_updates</span>
+                    <h4 data-i18n="benefit_driver_tips">Smart Recommendations</h4>
+                    <p data-i18n="benefit_driver_tips_desc">Get personalized maintenance tips based on your driving habits and mileage.</p>
+                </div>
+            </div>
+
+            <div class="feature-col">
+                <h3 class="col-title">
+                    <span class="material-icons">build</span> 
+                    <span data-i18n="for_workshops">For Workshops</span>
+                </h3>
+
+                <div class="card feature-card">
+                    <span class="material-icons card-icon">insights</span>
+                    <h4 data-i18n="benefit_2">Smart Diagnostics</h4>
+                    <p data-i18n="benefit_2_desc">Access vehicle data remotely before the car arrives at your shop.</p>
+                </div>
+
+                <div class="card feature-card">
+                    <span class="material-icons card-icon">loyalty</span>
+                    <h4 data-i18n="benefit_retention">Client Retention</h4>
+                    <p data-i18n="benefit_retention_desc">Automated appointment scheduling keeps your bays full.</p>
+                </div>
+
+                <div class="card feature-card">
+                    <span class="material-icons card-icon">history_edu</span>
+                    <h4 data-i18n="benefit_workshop_history">Digital Service History</h4>
+                    <p data-i18n="benefit_workshop_history_desc">Access the complete repair history of any vehicle to diagnose faster.</p>
+                </div>
+
+                <div class="card feature-card">
+                    <span class="material-icons card-icon">assessment</span>
+                    <h4 data-i18n="benefit_workshop_reports">Automated Reports</h4>
+                    <p data-i18n="benefit_workshop_reports_desc">Generate professional diagnostic reports for your clients in one click.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+        <section id="plans" class="section bg-alt">
+    <div class="container">
+        <h2 class="section-title" data-i18n="plans_title">Plans for Workshops</h2>
+        <p class="section-subtitle" data-i18n="plans_subtitle">Boost your garage efficiency. Choose a plan based on your team size.</p>
+
+        <div class="pricing-grid">
+            
+            <div class="pricing-card">
+                <div class="card-header">
+                    <h3 data-i18n="plan_basic_title">BASIC</h3>
+                    <div class="price">S/29.00<span class="period" data-i18n="per_month">/month</span></div>
+                    <p class="plan-desc" data-i18n="plan_basic_desc">Basic plan ideal for small workshops</p>
+                </div>
+                <div class="card-body">
+                    <ul class="feature-list">
+                        <li><span class="material-icons check">check</span> <span data-i18n="feat_3_mechanics">Up to 3 mechanics</span></li>
+                        <li><span class="material-icons check">check</span> <span data-i18n="feat_basic_sched">Basic scheduling</span></li>
+                        <li><span class="material-icons check">check</span> <span data-i18n="feat_service_history">Service history</span></li>
+                        <li><span class="material-icons check">check</span> <span data-i18n="feat_email_support">Email support</span></li>
+                    </ul>
+                    <a href="https://safecar-web-app.vercel.app" target="_blank" class="btn btn-outlined full-width" data-i18n="select_plan">Select Plan</a>
+                </div>
+            </div>
+
+            <div class="pricing-card popular">
+                
+                <div class="card-header">
+                    <h3 data-i18n="plan_pro_title">PROFESSIONAL</h3>
+                    <div class="price">S/99.00<span class="period" data-i18n="per_month">/month</span></div>
+                    <p class="plan-desc" data-i18n="plan_pro_desc">Professional plan for growing workshops</p>
+                </div>
+                <div class="card-body">
+                    <ul class="feature-list">
+                        <li><span class="material-icons check">check</span> <span data-i18n="feat_10_mechanics">Up to 10 mechanics</span></li>
+                        <li><span class="material-icons check">check</span> <span data-i18n="feat_adv_sched">Advanced scheduling</span></li>
+                        <li><span class="material-icons check">check</span> <span data-i18n="feat_full_history">Complete service history</span></li>
+                        <li><span class="material-icons check">check</span> <span data-i18n="feat_reports">Reports & Analytics</span></li>
+                        <li><span class="material-icons check">check</span> <span data-i18n="feat_prio_support">Priority support</span></li>
+                    </ul>
+                    <a href="https://safecar-web-app.vercel.app" target="_blank" class="btn btn-primary full-width" data-i18n="select_plan">Select Plan</a>
+                </div>
+            </div>
+
+            <div class="pricing-card">
+                <div class="card-header">
+                    <h3 data-i18n="plan_prem_title">PREMIUM</h3>
+                    <div class="price">S/299.00<span class="period" data-i18n="per_month">/month</span></div>
+                    <p class="plan-desc" data-i18n="plan_prem_desc">Premium plan for large workshops</p>
+                </div>
+                <div class="card-body">
+                    <ul class="feature-list">
+                        <li><span class="material-icons check">check</span> <span data-i18n="feat_30_mechanics">Up to 30 mechanics</span></li>
+                        <li><span class="material-icons check">check</span> <span data-i18n="feat_comp_sched">Complete scheduling</span></li>
+                        <li><span class="material-icons check">check</span> <span data-i18n="feat_ulim_history">Unlimited history</span></li>
+                        <li><span class="material-icons check">check</span> <span data-i18n="feat_adv_bi">Advanced Reports & BI</span></li>
+                        <li><span class="material-icons check">check</span> <span data-i18n="feat_custom_int">Custom integrations</span></li>
+                        <li><span class="material-icons check">check</span> <span data-i18n="feat_247_support">24/7 Dedicated support</span></li>
+                    </ul>
+                    <a href="https://safecar-web-app.vercel.app" target="_blank" class="btn btn-outlined full-width" data-i18n="select_plan">Select Plan</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+        <section id="about" class="section">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="section-title" data-i18n="about_title">How SafeCar Works</h2>
+            <p class="section-subtitle" data-i18n="about_subtitle">From detection to solution in 3 simple steps.</p>
+        </div>
+
+        <div class="process-grid">
+            <div class="process-card">
+                <div class="step-number">01</div>
+                <div class="icon-wrapper">
+                    <span class="material-icons">settings_input_hdmi</span>
+                </div>
+                <h3 data-i18n="step_1_title">Install Device</h3>
+                <p data-i18n="step_1_desc">Implement our IoT devices in your cars to start monitoring performance.</p>
+            </div>
+
+            <div class="process-arrow">
+                <span class="material-icons">arrow_forward</span>
+            </div>
+
+            <div class="process-card">
+                <div class="step-number">02</div>
+                <div class="icon-wrapper">
+                    <span class="material-icons">health_and_safety</span>
+                </div>
+                <h3 data-i18n="step_2_title">Receive Diagnostics</h3>
+                <p data-i18n="step_2_desc">Get alerts about potential failures or maintenance needs in real-time.</p>
+            </div>
+
+            <div class="process-arrow">
+                <span class="material-icons">arrow_forward</span>
+            </div>
+
+            <div class="process-card">
+                <div class="step-number">03</div>
+                <div class="icon-wrapper">
+                    <span class="material-icons">calendar_month</span>
+                </div>
+                <h3 data-i18n="step_3_title">Schedule Service</h3>
+                <p data-i18n="step_3_desc">Book an appointment at a trusted workshop directly through the app.</p>
+            </div>
+        </div>
+
+        <div class="video-showcase mt-large">
+            <div class="video-wrapper elevation-4">
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="SafeCar Product Demo" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <p class="text-center mt-2 caption-text" data-i18n="video_caption">Watch SafeCar in action</p>
+        </div>
+    </div>
+</section>
+
+<section id="mission" class="section bg-white">
+    <div class="container">
+        
+        <div class="corporate-header">
+            <span class="corp-label" data-i18n="startup_label">Corporate Profile</span>
+            <h2 class="corp-title">MetaSoft</h2>
+            <div class="corp-divider"></div>
+        </div>
+
+        <div class="corp-description">
+            <p data-i18n="startup_desc">
+                MetaSoft is a technology startup dedicated to creating smart digital solutions integrating web platforms and IoT. Our purpose is to accompany companies and organizations in their digital transformation processes, developing tools capable of transforming data into strategic knowledge to optimize processes, anticipate needs, and promote sustainability.
             </p>
-          </div>
-
-          <div class="flex-1 flex items-center justify-center">
-            <iframe
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-              title="Demo SafeCar"
-              class="w-full h-80 rounded-xl border border-gray-300 shadow-md"
-              allowfullscreen
-            ></iframe>
-          </div>
         </div>
-      </section>
 
-      <section id="plans"
-        class="bg-[#f3f8ff] py-16 flex items-center justify-center min-h-[100vh]"
-      >
-        <div class="max-w-6xl w-full mx-auto px-4">
-          <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-10">
-            <span data-i18n="plans_title">SafeCar Plans</span>
-          </h2>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Básico -->
-            <div
-              class="bg-white rounded-2xl border-4 border-gray-200 p-8 flex flex-col justify-between items-center shadow-sm transition-all duration-200 hover:border-primary hover:scale-105 h-full"
-            >
-              <div class="flex flex-col items-center w-full">
-                <h3 class="text-2xl font-bold mb-2 text-center">Básico</h3>
-                <p class="text-3xl font-bold mb-4">
-                  $9.99<span class="text-xl font-normal">/month</span>
+        <div class="corp-grid">
+            
+            <div class="corp-card">
+                <div class="card-icon-wrapper">
+                    <span class="material-icons">engineering</span> </div>
+                <h3 data-i18n="mission_title">Our Mission</h3>
+                <p data-i18n="mission_text">
+                    To transform data into useful and actionable knowledge, offering innovative solutions that boost efficiency, empower decision-making, and generate real value for professionals, companies, and end-users.
                 </p>
-                <ul class="mb-8 space-y-2 text-left">
-                  <li class="flex items-center gap-2 text-gray-700">
-                    <span class="text-green-500 text-xl">✔</span> Basic monitoring
-                  </li>
-                  <li class="flex items-center gap-2 text-gray-700 font-nunito">
-                    <span class="text-green-500 text-xl">✔</span> Essential alerts
-                  </li>
-                  <li class="flex items-center gap-2 text-gray-700 font-nunito">
-                    <span class="text-green-500 text-xl">✔</span> Monthly reports
-                  </li>
-                </ul>
-              </div>
-              <div class="w-full">
-                <button
-                  class="bg-primary text-white font-bold py-3 px-8 rounded-lg text-lg shadow-lg transition-colors hover:bg-secondary w-full"
-                >
-                  <span data-i18n="select">Select</span>
-                </button>
-              </div>
             </div>
 
-            <!-- Premium 19.99 (destacado por defecto) -->
-            <div
-              class="bg-white rounded-2xl border-4 border-primary p-8 flex flex-col justify-between items-center shadow-md scale-105 transition-all duration-200 hover:scale-105 hover:border-primary h-full"
-            >
-              <div class="flex flex-col items-center w-full">
-                <h3 class="text-2xl font-bold mb-2 text-center">Premium</h3>
-                <p class="text-3xl font-bold mb-4">
-                  $19.99<span class="text-xl font-normal">/month</span>
+            <div class="corp-card">
+                <div class="card-icon-wrapper">
+                    <span class="material-icons">visibility</span>
+                </div>
+                <h3 data-i18n="vision_title">Our Vision</h3>
+                <p data-i18n="vision_text">
+                    To be recognized as a leading startup in developing digital solutions based on web platforms and IoT, standing out for our ability to generate positive impact in different sectors and contribute to building a more connected, intelligent, and sustainable society.
                 </p>
-                <ul class="mb-8 space-y-2 text-left">
-                  <li class="flex items-center gap-2 text-gray-700">
-                    <span class="text-green-500 text-xl">✔</span> Advanced monitoring
-                  </li>
-                  <li class="flex items-center gap-2 text-gray-700 font-nunito">
-                    <span class="text-green-500 text-xl">✔</span> Smart alerts
-                  </li>
-                  <li class="flex items-center gap-2 text-gray-700 font-nunito">
-                    <span class="text-green-500 text-xl">✔</span> Detailed reports
-                  </li>
-                  <li class="flex items-center gap-2 text-gray-700 font-nunito">
-                    <span class="text-green-500 text-xl">✔</span> Predictive maintenance
-                  </li>
-                </ul>
-              </div>
-              <div class="w-full">
-                <button
-                  class="bg-primary text-white font-bold py-3 px-8 rounded-lg text-lg shadow-lg transition-colors hover:bg-secondary w-full"
-                >
-                  Select
-                </button>
-              </div>
             </div>
 
-            <!-- Premium 29.99 -->
-            <div
-              class="bg-white rounded-2xl border-4 border-gray-200 p-8 flex flex-col justify-between items-center shadow-sm transition-all duration-200 hover:border-primary hover:scale-105 h-full"
-            >
-              <div class="flex flex-col items-center w-full">
-                <h3 class="text-2xl font-bold mb-2 text-center">Premium</h3>
-                <p class="text-3xl font-bold mb-4">
-                  $29.99<span class="text-xl font-normal">/month</span>
-                </p>
-                <ul class="mb-8 space-y-2 text-left">
-                  <li class="flex items-center gap-2 text-gray-700">
-                    <span class="text-green-500 text-xl">✔</span> Full monitoring
-                  </li>
-                  <li class="flex items-center gap-2 text-gray-700 font-nunito">
-                    <span class="text-green-500 text-xl">✔</span> Premium alerts
-                  </li>
-                  <li class="flex items-center gap-2 text-gray-700 font-nunito">
-                    <span class="text-green-500 text-xl">✔</span> Exhaustive reports
-                  </li>
-                  <li class="flex items-center gap-2 text-gray-700 font-nunito">
-                    <span class="text-green-500 text-xl">✔</span> Predictive maintenance
-                  </li>
-                  <li class="flex items-center gap-2 text-gray-700 font-nunito">
-                    <span class="text-green-500 text-xl">✔</span> Priority support
-                  </li>
-                </ul>
-              </div>
-              <div class="w-full">
-                <button
-                  class="bg-primary text-white font-bold py-3 px-8 rounded-lg text-lg shadow-lg transition-colors hover:bg-secondary w-full"
-                >
-                  Select
-                </button>
-              </div>
-            </div>
-          </div>
         </div>
-      </section>
+    </div>
+</section>
 
-      <section id="testimonies" class="bg-white py-16 min-h-screen">
-        <div class="max-w-7xl mx-auto px-4">
-          <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-10">
-            <span data-i18n="testimonials_title">Customer Testimonials</span>
-          </h2>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-            <!-- Testimonio -->
-            <div
-              class="bg-[#F0F7FF] border-2 border-primary rounded-xl p-6 flex flex-col gap-3 shadow-sm"
-            >
-              <div class="flex items-center gap-4">
-                <img
-                  src="./assets/img/testimonial.webp"
-                  alt="Carlos L."
-                  class="w-16 h-16 rounded-full object-cover border-2 border-primary"
-                />
-                <div>
-                  <div class="font-bold text-lg">Carlos L.</div>
-                  <div class="text-gray-600 text-sm">29 - 08 - 2025</div>
+
+        <section id="testimonials" class="section bg-alt">
+    <div class="container">
+        <h2 class="section-title" data-i18n="testimonials_title">Success Stories</h2>
+        <p class="section-subtitle" data-i18n="testimonials_subtitle">Real stories from our connected community.</p>
+
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="quote-icon"><span class="material-icons">format_quote</span></div>
+                <p data-i18n="testimonial_1_text">"SafeCar alerted me about an engine overheat 2 days before a long trip. It saved my vacation!"</p>
+                <div class="user-info">
+                    <img src="assets/img/testimonial.webp" alt="User" class="avatar">
+                    <div>
+                        <h5 data-i18n="testimonial_1_name">Carlos L.</h5>
+                        <small data-i18n="role_driver">Driver</small>
+                    </div>
                 </div>
-              </div>
-              <div class="flex items-center gap-1 mt-2 mb-2">
-                <img src="./assets/svg/star.svg" alt="Star" class="w-6 h-6" />
-                <img src="./assets/svg/star.svg" alt="Star" class="w-6 h-6" />
-                <img src="./assets/svg/star.svg" alt="Star" class="w-6 h-6" />
-                <img src="./assets/svg/star.svg" alt="Star" class="w-6 h-6" />
-                <img src="./assets/svg/star.svg" alt="Star" class="w-6 h-6" />
-              </div>
-              <p class="text-gray-700 text-base text-justify">
-                <span data-i18n="testimonial">SafeCar has transformed my driving experience. I feel much safer and more relaxed knowing I have accurate information about my car's condition.</span>
-              </p>
             </div>
-            <!-- Testimonio -->
-            <div
-              class="bg-[#F0F7FF] border-2 border-primary rounded-xl p-6 flex flex-col gap-3 shadow-sm"
-            >
-              <div class="flex items-center gap-4">
-                <img
-                  src="./assets/img/testimonial.webp"
-                  alt="Carlos L."
-                  class="w-16 h-16 rounded-full object-cover border-2 border-primary"
-                />
-                <div>
-                  <div class="font-bold text-lg">Carlos L.</div>
-                  <div class="text-gray-600 text-sm">29 - 08 - 2025</div>
+
+            <div class="testimonial-card">
+                <div class="quote-icon"><span class="material-icons">format_quote</span></div>
+                <p data-i18n="testimonial_2_text">"Since using SafeCar, we receive cars with the diagnosis already made. Our efficiency improved by 40%."</p>
+                <div class="user-info">
+                    <img src="assets/img/testimonial.webp" alt="User" class="avatar">
+                    <div>
+                        <h5 data-i18n="testimonial_2_name">Jorge R.</h5>
+                        <small data-i18n="role_workshop_owner">Workshop Owner</small>
+                    </div>
                 </div>
-              </div>
-              <div class="flex items-center gap-1 mt-2 mb-2">
-                <img src="./assets/svg/star.svg" alt="Star" class="w-6 h-6" />
-                <img src="./assets/svg/star.svg" alt="Star" class="w-6 h-6" />
-                <img src="./assets/svg/star.svg" alt="Star" class="w-6 h-6" />
-                <img src="./assets/svg/star.svg" alt="Star" class="w-6 h-6" />
-                <img src="./assets/svg/star.svg" alt="Star" class="w-6 h-6" />
-              </div>
-              <p class="text-gray-700 text-base text-justify">
-                "SafeCar ha transformado mi experiencia de conducción. Me siento
-                mucho más seguro y tranquilo sabiendo que tengo información
-                precisa sobre el estado de mi auto."
-              </p>
             </div>
-            <!-- Testimonio -->
-            <div
-              class="bg-[#F0F7FF] border-2 border-primary rounded-xl p-6 flex flex-col gap-3 shadow-sm"
-            >
-              <div class="flex items-center gap-4">
-                <img
-                  src="./assets/img/testimonial.webp"
-                  alt="Carlos L."
-                  class="w-16 h-16 rounded-full object-cover border-2 border-primary"
-                />
-                <div>
-                  <div class="font-bold text-lg">Carlos L.</div>
-                  <div class="text-gray-600 text-sm">29 - 08 - 2025</div>
+
+            <div class="testimonial-card">
+                <div class="quote-icon"><span class="material-icons">format_quote</span></div>
+                <p data-i18n="testimonial_3_text">"Managing 15 delivery vans was chaos. Now I know exactly which van needs maintenance."</p>
+                <div class="user-info">
+                    <img src="assets/img/testimonial.webp" alt="User" class="avatar">
+                    <div>
+                        <h5 data-i18n="testimonial_3_name">Maria F.</h5>
+                        <small data-i18n="role_fleet_manager">Fleet Manager</small>
+                    </div>
                 </div>
-              </div>
-              <div class="flex items-center gap-1 mt-2 mb-2">
-                <img src="./assets/svg/star.svg" alt="Star" class="w-6 h-6" />
-                <img src="./assets/svg/star.svg" alt="Star" class="w-6 h-6" />
-                <img src="./assets/svg/star.svg" alt="Star" class="w-6 h-6" />
-                <img src="./assets/svg/star.svg" alt="Star" class="w-6 h-6" />
-                <img src="./assets/svg/star.svg" alt="Star" class="w-6 h-6" />
-              </div>
-              <p class="text-gray-700 text-base text-justify">
-                "SafeCar ha transformado mi experiencia de conducción. Me siento
-                mucho más seguro y tranquilo sabiendo que tengo información
-                precisa sobre el estado de mi auto."
-              </p>
             </div>
-            <!-- Testimonio -->
-            <div
-              class="bg-[#F0F7FF] border-2 border-primary rounded-xl p-6 flex flex-col gap-3 shadow-sm"
-            >
-              <div class="flex items-center gap-4">
-                <img
-                  src="./assets/img/testimonial.webp"
-                  alt="Carlos L."
-                  class="w-16 h-16 rounded-full object-cover border-2 border-primary"
-                />
-                <div>
-                  <div class="font-bold text-lg">Carlos L.</div>
-                  <div class="text-gray-600 text-sm">29 - 08 - 2025</div>
+
+            <div class="testimonial-card">
+                <div class="quote-icon"><span class="material-icons">format_quote</span></div>
+                <p data-i18n="testimonial_4_text">"The history reports help me explain repairs to clients clearly. Trust has increased significantly."</p>
+                <div class="user-info">
+                    <img src="assets/img/testimonial.webp" alt="User" class="avatar">
+                    <div>
+                        <h5 data-i18n="testimonial_4_name">David S.</h5>
+                        <small data-i18n="role_mechanic">Senior Mechanic</small>
+                    </div>
                 </div>
-              </div>
-              <div class="flex items-center gap-1 mt-2 mb-2">
-                <img src="./assets/svg/star.svg" alt="Star" class="w-6 h-6" />
-                <img src="./assets/svg/star.svg" alt="Star" class="w-6 h-6" />
-                <img src="./assets/svg/star.svg" alt="Star" class="w-6 h-6" />
-                <img src="./assets/svg/star.svg" alt="Star" class="w-6 h-6" />
-                <img src="./assets/svg/star.svg" alt="Star" class="w-6 h-6" />
-              </div>
-              <p class="text-gray-700 text-base text-justify">
-                "SafeCar ha transformado mi experiencia de conducción. Me siento
-                mucho más seguro y tranquilo sabiendo que tengo información
-                precisa sobre el estado de mi auto."
-              </p>
             </div>
-          </div>
-        </div>
-      </section>
 
-      <section id="contact"
-        class="bg-[#eaf2fb] py-16 min-h-screen flex items-center justify-center"
-      >
-        <div
-          class="w-full max-w-5xl flex flex-col md:flex-row items-stretch justify-between gap-3 lg:gap-12 px-4 mx-auto"
-        >
-          <div
-            class="flex-1 flex items-center justify-center md:justify-start mb-10 md:mb-0"
-          >
-            <img
-              src="./assets/img/safecar-logo.webp"
-              alt="Logo SafeCar"
-              class="w-48 lg:w-80 lg:h-80 h-48 max-w-xs object-contain"
-            />
-          </div>
-
-          <div class="flex-1 max-w-xl w-full flex items-center">
-            <div class="w-full">
-              <h2 class="text-3xl font-extrabold text-center mb-8"><span data-i18n="contact">Contact</span></h2>
-              <form class="flex flex-col gap-6">
-                <div>
-                  <label for="name" class="block text-xl mb-2"><span data-i18n="name">Name</span></label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    class="w-full px-4 py-3 rounded-xl border border-gray-400 bg-[#eaf2fb] focus:outline-none focus:border-primary text-lg"
-                  />
+            <div class="testimonial-card">
+                <div class="quote-icon"><span class="material-icons">format_quote</span></div>
+                <p data-i18n="testimonial_5_text">"For a taxi driver, a breakdown means losing money. SafeCar keeps my car running 24/7."</p>
+                <div class="user-info">
+                    <img src="assets/img/testimonial.webp" alt="User" class="avatar">
+                    <div>
+                        <h5 data-i18n="testimonial_5_name">Roberto M.</h5>
+                        <small data-i18n="role_taxi">Taxi Driver</small>
+                    </div>
                 </div>
-                <div>
-                  <label for="email" class="block text-xl mb-2"><span data-i18n="email">Email</span></label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    class="w-full px-4 py-3 rounded-xl border border-gray-400 bg-[#eaf2fb] focus:outline-none focus:border-primary text-lg"
-                  />
+            </div>
+
+            <div class="testimonial-card">
+                <div class="quote-icon"><span class="material-icons">format_quote</span></div>
+                <p data-i18n="testimonial_6_text">"I monitor my rental fleet remotely. The predictive alerts reduce my maintenance costs by half."</p>
+                <div class="user-info">
+                    <img src="assets/img/testimonial.webp" alt="User" class="avatar">
+                    <div>
+                        <h5 data-i18n="testimonial_6_name">Elena G.</h5>
+                        <small data-i18n="role_rental">Rental Agency Owner</small>
+                    </div>
                 </div>
-                <div>
-                  <label for="message" class="block text-xl mb-2"><span data-i18n="message">Message</span></label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows="4"
-                    class="w-full px-4 py-3 rounded-xl border border-gray-400 bg-[#eaf2fb] focus:outline-none focus:border-primary text-lg resize-none"
-                  ></textarea>
-                </div>
-                <button
-                  type="submit"
-                  class="bg-primary text-white font-bold py-3 px-8 rounded-xl text-lg shadow-lg transition-colors hover:bg-secondary w-full"
-                >
-                  <span data-i18n="send">Send</span>
-                </button>
-              </form>
             </div>
-          </div>
         </div>
-      </section>
-
-      <section id="team"
-        class="bg-[#eaf2fb] py-16 min-h-screen flex items-center justify-center"
-      >
-        <div class="max-w-7xl w-full mx-auto px-4">
-          <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-12">
-            <span data-i18n="team_title">Our Team</span>
-          </h2>
-          
-          <!-- Team Grid -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mb-12">
-            <!-- Team Member 1 - Anaely -->
-            <div class="flex flex-col items-center group">
-              <div class="relative mb-4">
-                <img
-                  src="./assets/img/Anaely-photo.jpeg"
-                  alt="Anaely"
-                  class="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-primary shadow-lg group-hover:scale-105 transition-transform duration-300"
-                />
-                <div class="absolute inset-0 rounded-full bg-primary bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300"></div>
-              </div>
-              <h3 class="text-lg md:text-xl font-bold text-center text-gray-800">
-                <span data-i18n="team_member_1">Anaely</span>
-              </h3>
-            </div>
-
-            <!-- Team Member 2 - Gonzalo Quedena -->
-            <div class="flex flex-col items-center group">
-              <div class="relative mb-4">
-                <img
-                  src="./assets/img/gonzalo-quedena.jpeg"
-                  alt="Gonzalo Quedena"
-                  class="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-primary shadow-lg group-hover:scale-105 transition-transform duration-300"
-                />
-                <div class="absolute inset-0 rounded-full bg-primary bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300"></div>
-              </div>
-              <h3 class="text-lg md:text-xl font-bold text-center text-gray-800">
-                <span data-i18n="team_member_2">Gonzalo Quedena</span>
-              </h3>
-            </div>
-
-            <!-- Team Member 3 - Gustavo Aguirre -->
-            <div class="flex flex-col items-center group">
-              <div class="relative mb-4">
-                <img
-                  src="./assets/img/gustavo-aguirre.jpeg"
-                  alt="Gustavo Aguirre"
-                  class="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-primary shadow-lg group-hover:scale-105 transition-transform duration-300"
-                />
-                <div class="absolute inset-0 rounded-full bg-primary bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300"></div>
-              </div>
-              <h3 class="text-lg md:text-xl font-bold text-center text-gray-800">
-                <span data-i18n="team_member_3">Gustavo Aguirre</span>
-              </h3>
-            </div>
-
-            <!-- Team Member 4 - Hardie Holguin -->
-            <div class="flex flex-col items-center group">
-              <div class="relative mb-4">
-                <img
-                  src="./assets/img/hardie-holguin.jpeg"
-                  alt="Hardie Holguin"
-                  class="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-primary shadow-lg group-hover:scale-105 transition-transform duration-300"
-                />
-                <div class="absolute inset-0 rounded-full bg-primary bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300"></div>
-              </div>
-              <h3 class="text-lg md:text-xl font-bold text-center text-gray-800">
-                <span data-i18n="team_member_4">Hardie Holguin</span>
-              </h3>
-            </div>
-
-            <!-- Team Member 5 - Janover Saldaña -->
-            <div class="flex flex-col items-center group col-span-1 sm:col-span-2 md:col-span-1 lg:col-span-1 lg:col-start-2">
-              <div class="relative mb-4">
-                <img
-                  src="./assets/img/janover-saldana.jpg"
-                  alt="Janover Saldaña"
-                  class="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-primary shadow-lg group-hover:scale-105 transition-transform duration-300"
-                />
-                <div class="absolute inset-0 rounded-full bg-primary bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300"></div>
-              </div>
-              <h3 class="text-lg md:text-xl font-bold text-center text-gray-800">
-                <span data-i18n="team_member_5">Janover Saldaña</span>
-              </h3>
-            </div>
-
-            <!-- Team Member 6 - Javier Irigoyen -->
-            <div class="flex flex-col items-center group">
-              <div class="relative mb-4">
-                <img
-                  src="./assets/img/javier-irigoyen.jpeg"
-                  alt="Javier Irigoyen"
-                  class="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-primary shadow-lg group-hover:scale-105 transition-transform duration-300"
-                />
-                <div class="absolute inset-0 rounded-full bg-primary bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300"></div>
-              </div>
-              <h3 class="text-lg md:text-xl font-bold text-center text-gray-800">
-                <span data-i18n="team_member_6">Javier Irigoyen</span>
-              </h3>
-            </div>
-
-            <!-- Team Member 7 - Kenyi Mendoza -->
-            <div class="flex flex-col items-center group">
-              <div class="relative mb-4">
-                <img
-                  src="./assets/img/kenyi-mendoza.jpeg"
-                  alt="Kenyi Mendoza"
-                  class="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-primary shadow-lg group-hover:scale-105 transition-transform duration-300"
-                />
-                <div class="absolute inset-0 rounded-full bg-primary bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300"></div>
-              </div>
-              <h3 class="text-lg md:text-xl font-bold text-center text-gray-800">
-                <span data-i18n="team_member_7">Kenyi Mendoza</span>
-              </h3>
-            </div>
-          </div>
-
-          <!-- Optional: Video Demo Section -->
-          <div class="flex items-center justify-center mt-12">
-            <div class="w-full max-w-4xl">
-              <h3 class="text-2xl font-bold text-center mb-6 text-gray-800">
-                Meet Our Team in Action
-              </h3>
-              <iframe
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                title="Demo SafeCar Team"
-                class="w-full h-64 md:h-80 lg:h-96 rounded-xl border border-gray-300 shadow-md"
-                allowfullscreen
-              ></iframe>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="bg-[#232936] py-8">
-      <div class="max-w-6xl mx-auto px-4 flex flex-col items-center">
-        <nav class="mb-4">
-          <ul
-            class="flex flex-wrap gap-8 justify-center text-white text-base font-medium"
-          >
-            <li><a href="#home" class="hover:text-primary" data-i18n="home">Home</a></li>
-            <li><a href="#features" class="hover:text-primary" data-i18n="features">Features</a></li>
-            <li><a href="#plans" class="hover:text-primary" data-i18n="plans">Plans</a></li>
-            <li><a href="#testimonies" class="hover:text-primary" data-i18n="testimonials">Testimonials</a></li>
-            <li><a href="#about" class="hover:text-primary" data-i18n="about">About</a></li>
-            <li><a href="#team" class="hover:text-primary" data-i18n="team">Team</a></li>
-            <li><a href="#contact" class="hover:text-primary" data-i18n="contact">Contact</a></li>
-          </ul>
-        </nav>
-        <div class="flex gap-8 mb-4">
-          <a href="#" aria-label="Facebook">
-            <img
-              src="./assets/svg/ri_facebook-fill.svg"
-              alt="Facebook"
-              class="w-6 h-6"
-            />
-          </a>
-          <a href="#" aria-label="Instagram">
-            <img
-              src="./assets/svg/streamline_instagram-solid.svg"
-              alt="Instagram"
-              class="w-6 h-6"
-            />
-          </a>
-          <a href="#" aria-label="Twitter">
-            <img
-              src="./assets/svg/mdi_twitter.svg"
-              alt="Twitter"
-              class="w-6 h-6"
-            />
-          </a>
-        </div>
-        <div class="text-white text-sm flex flex-col sm:flex-row justify-between items-center w-full">
-          <span class="mb-2 sm:mb-0" data-i18n="copyright">© 2025 SafeCar. All rights reserved.</span>
-          <button id="termsBtn" class="bg-white bg-opacity-10 hover:bg-opacity-20 text-white hover:text-primary px-4 py-2 rounded-lg border border-white border-opacity-30 hover:border-primary transition-all duration-300 font-medium shadow-sm hover:shadow-md" data-i18n="terms_conditions">Terms & Conditions</button>
-        </div>
-      </div>
-    </footer>
-
-    <!-- Modal de Términos y Condiciones -->
-    <div id="termsModal" class="fixed inset-0 bg-black bg-opacity-60 z-50 hidden flex items-center justify-center p-4">
-      <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden shadow-2xl border-4 border-primary">
-        <!-- Header del Modal -->
-        <div class="bg-gradient-to-r from-primary to-secondary text-white p-6">
-          <div class="flex justify-between items-center">
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
-                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z" />
-                  <path d="M8,12V14H16V12H8M8,16V18H13V16H8Z" />
-                  <circle cx="10" cy="6" r="1" />
-                  <circle cx="12" cy="6" r="1" />
-                  <circle cx="14" cy="6" r="1" />
-                </svg>
-              </div>
-              <h2 class="text-2xl font-bold" data-i18n="terms_conditions_title">Terms and Conditions</h2>
-            </div>
-            <button id="closeModal" class="text-white hover:text-gray-200 text-3xl font-bold transition-colors w-10 h-10 flex items-center justify-center rounded-full hover:bg-white hover:bg-opacity-20">&times;</button>
-          </div>
-        </div>
-        
-        <!-- Contenido del Modal -->
-        <div class="p-6 overflow-y-auto max-h-[60vh]">
-          <div class="space-y-6 text-gray-700">
-            <section class="bg-blue-50 border-l-4 border-primary p-4 rounded-r-lg">
-              <h3 class="text-lg font-bold mb-3 text-primary flex items-center gap-2" data-i18n="terms_acceptance">
-                <span class="w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold">1</span>
-                Acceptance of Terms
-              </h3>
-              <p class="text-gray-600 leading-relaxed" data-i18n="terms_acceptance_desc">By accessing and using SafeCar application, you accept and agree to be bound by the terms and provision of this agreement.</p>
-            </section>
-            
-            <section class="bg-blue-50 border-l-4 border-primary p-4 rounded-r-lg">
-              <h3 class="text-lg font-bold mb-3 text-primary flex items-center gap-2" data-i18n="terms_services">
-                <span class="w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold">2</span>
-                Use of Services
-              </h3>
-              <p class="text-gray-600 leading-relaxed" data-i18n="terms_services_desc">SafeCar provides vehicle monitoring and diagnostic services through IoT technology. You agree to use our services responsibly and in accordance with applicable laws.</p>
-            </section>
-            
-            <section class="bg-blue-50 border-l-4 border-primary p-4 rounded-r-lg">
-              <h3 class="text-lg font-bold mb-3 text-primary flex items-center gap-2" data-i18n="terms_privacy">
-                <span class="w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold">3</span>
-                Privacy and Data
-              </h3>
-              <p class="text-gray-600 leading-relaxed" data-i18n="terms_privacy_desc">We collect and process vehicle data to provide our services. Your privacy is important to us, and we handle your data in accordance with our Privacy Policy.</p>
-            </section>
-            
-            <section class="bg-blue-50 border-l-4 border-primary p-4 rounded-r-lg">
-              <h3 class="text-lg font-bold mb-3 text-primary flex items-center gap-2" data-i18n="terms_liability">
-                <span class="w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold">4</span>
-                Limitation of Liability
-              </h3>
-              <p class="text-gray-600 leading-relaxed" data-i18n="terms_liability_desc">SafeCar shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of our services.</p>
-            </section>
-            
-            <section class="bg-blue-50 border-l-4 border-primary p-4 rounded-r-lg">
-              <h3 class="text-lg font-bold mb-3 text-primary flex items-center gap-2" data-i18n="terms_modifications">
-                <span class="w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold">5</span>
-                Modifications
-              </h3>
-              <p class="text-gray-600 leading-relaxed" data-i18n="terms_modifications_desc">We reserve the right to modify these terms at any time. Changes will be effective immediately upon posting on our website.</p>
-            </section>
-            
-            <section class="bg-blue-50 border-l-4 border-primary p-4 rounded-r-lg">
-              <h3 class="text-lg font-bold mb-3 text-primary flex items-center gap-2" data-i18n="terms_contact">
-                <span class="w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold">6</span>
-                Contact Information
-              </h3>
-              <p class="text-gray-600 leading-relaxed" data-i18n="terms_contact_desc">If you have any questions about these Terms and Conditions, please contact us through our support channels.</p>
-            </section>
-          </div>
-        </div>
-        
-        <!-- Footer del Modal -->
-        <div class="bg-gray-50 border-t-2 border-primary p-6">
-         
-            <div class="flex gap-3 align-center justify-end">
-              <button id="declineTerms" class="bg-gray-200 text-gray-700 px-6 py-2 rounded-lg hover:bg-gray-300 transition-colors font-medium" data-i18n="decline">Decline</button>
-              <button id="acceptTerms" class="bg-gradient-to-r from-primary to-secondary text-white px-8 py-2 rounded-lg hover:from-secondary hover:to-primary transition-all duration-300 shadow-lg font-bold transform hover:scale-105" data-i18n="accept">Accept</button>
-            </div>
-       
-        </div>
-      </div>
+    </div>
+</section>
     </div>
 
-    <!--Script-->
-  <script src="src/js/nav-menu.js"></script>
-    <script src="src/js/i18n.js"></script>
-    <script>
-      // Modal de Términos y Condiciones
-      const termsBtn = document.getElementById('termsBtn');
-      const termsModal = document.getElementById('termsModal');
-      const closeModal = document.getElementById('closeModal');
-      const acceptTerms = document.getElementById('acceptTerms');
-      const declineTerms = document.getElementById('declineTerms');
 
-      termsBtn.addEventListener('click', () => {
-        termsModal.classList.remove('hidden');
-        document.body.style.overflow = 'hidden';
-      });
 
-      closeModal.addEventListener('click', closeModalFunction);
-      acceptTerms.addEventListener('click', closeModalFunction);
-      declineTerms.addEventListener('click', closeModalFunction);
+</section>
 
-      function closeModalFunction() {
-        termsModal.classList.add('hidden');
-        document.body.style.overflow = 'auto';
-      }
+        <section id="team" class="section">
+    <div class="container">
+        <h2 class="section-title" data-i18n="team_title">Our Team</h2>
+        <p class="section-subtitle" data-i18n="team_subtitle">The minds behind the innovation.</p>
 
-      // Cerrar modal al hacer clic fuera del contenido
-      termsModal.addEventListener('click', (e) => {
-        if (e.target === termsModal) {
-          closeModalFunction();
-        }
-      });
+        <div class="team-grid">
+            <div class="team-member">
+                <div class="member-photo-wrapper">
+                    <img src="assets/img/Anaely-photo.jpeg" alt="Anaely">
+                </div>
+                <h4>Anaely</h4>
+                <span class="role" data-i18n="role_sw_engineer">Software Engineer</span>
+            </div>
 
-      // Cerrar modal con la tecla Escape
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && !termsModal.classList.contains('hidden')) {
-          closeModalFunction();
-        }
-      });
-    </script>
-  </body>
+            <div class="team-member">
+                <div class="member-photo-wrapper">
+                    <img src="assets/img/gonzalo-quedena.jpeg" alt="Gonzalo Quedena">
+                </div>
+                <h4>Gonzalo Quedena</h4>
+                <span class="role" data-i18n="role_sw_engineer">Software Engineer</span>
+            </div>
+
+            <div class="team-member">
+                <div class="member-photo-wrapper">
+                    <img src="assets/img/gustavo-aguirre.jpeg" alt="Gustavo Aguirre">
+                </div>
+                <h4>Gustavo Aguirre</h4>
+                <span class="role" data-i18n="role_sw_engineer">Software Engineer</span>
+            </div>
+
+            <div class="team-member">
+                <div class="member-photo-wrapper">
+                    <img src="assets/img/Hardie-holguin.jpeg" alt="Hardie Holguin">
+                </div>
+                <h4>Hardie Holguin</h4>
+                <span class="role" data-i18n="role_sw_engineer">Software Engineer</span>
+            </div>
+
+            <div class="team-member">
+                <div class="member-photo-wrapper">
+                    <img src="assets/img/javier-irigoyen.jpeg" alt="Javier Irigoyen">
+                </div>
+                <h4>Javier Irigoyen</h4>
+                <span class="role" data-i18n="role_sw_engineer">Software Engineer</span>
+            </div>
+
+            <div class="team-member">
+                <div class="member-photo-wrapper">
+                    <img src="assets/img/kenyi-mendoza.jpeg" alt="Kenyi Mendoza">
+                </div>
+                <h4>Kenyi Mendoza</h4>
+                <span class="role" data-i18n="role_sw_engineer">Software Engineer</span>
+            </div>
+        </div>
+
+        </div>
+
+        <div class="team-video-section">
+            <div class="divider-line"></div>
+
+            <div class="text-center mb-4">
+                <h3 class="subsection-title" data-i18n="about_team_title">About the Team</h3>
+                <p class="section-subtitle" data-i18n="about_team_desc">Discover the passion and process behind SafeCar.</p>
+            </div>
+
+            <div class="video-showcase">
+                <div class="video-wrapper elevation-4">
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="About the Team Video" allowfullscreen loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+    </div>
+</section>
+
+        <section id="contact" class="section bg-alt">
+    <div class="container">
+        <div class="contact-wrapper elevation-3">
+            
+            <div class="contact-info-col">
+                <div>
+                    <h2 data-i18n="contact_title">Contact Us</h2>
+                    <p data-i18n="contact_subtitle">Have questions about our device or plans? We're here to help.</p>
+                </div>
+
+                <div class="info-list">
+                    <div class="info-item">
+                        <div class="icon-circle">
+                            <span class="material-icons">email</span>
+                        </div>
+                        <div>
+                            <span class="label">Email</span>
+                            <p>contact@safecar.com</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="icon-circle">
+                            <span class="material-icons">location_on</span>
+                        </div>
+                        <div>
+                            <span class="label">Location</span>
+                            <p>Lima, Peru</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-footer">
+                    <p><span class="material-icons small-icon">schedule</span> <span data-i18n="response_time">We usually reply within 24 hours.</span></p>
+                </div>
+            </div>
+
+            <div class="contact-form-col">
+                <form class="material-form">
+                    <div class="form-row">
+                        <div class="input-group">
+                            <input type="text" id="name" required placeholder=" ">
+                            <label for="name" data-i18n="form_name">Name</label>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" id="email" required placeholder=" ">
+                            <label for="email" data-i18n="form_email">Email</label>
+                        </div>
+                    </div>
+
+                    <div class="input-group select-group">
+                        <select id="subject" required>
+                            <option value="" disabled selected hidden></option> <option value="general" data-i18n="opt_general">General Inquiry</option>
+                            <option value="support" data-i18n="opt_support">Technical Support</option>
+                            <option value="sales" data-i18n="opt_sales">Sales / Workshops</option>
+                        </select>
+                        <label for="subject" data-i18n="form_subject">Subject</label>
+                        <span class="material-icons select-arrow">expand_more</span>
+                    </div>
+
+                    <div class="input-group">
+                        <textarea id="message" rows="4" required placeholder=" "></textarea>
+                        <label for="message" data-i18n="form_message">Message</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary full-width">
+                        <span data-i18n="form_send">Send Message</span>
+                        <span class="material-icons" style="margin-left: 8px; font-size: 1.2rem;">send</span>
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+    </main>
+
+    <footer class="app-footer">
+    <div class="container">
+        <div class="footer-top">
+            <div class="footer-grid">
+                
+                <div class="footer-col brand-col">
+                    <a href="#" class="footer-logo">
+                        <img src="assets/img/safecar-logo.webp" alt="SafeCar Logo">
+                        <span>SafeCar</span>
+                    </a>
+                    <p data-i18n="footer_mission">Transforming vehicle data into actionable insights for a safer, smarter driving experience.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><img src="assets/svg/ri_facebook-fill.svg" alt="Facebook"></a>
+                        <a href="#" aria-label="Twitter"><img src="assets/svg/mdi_twitter.svg" alt="Twitter"></a>
+                        <a href="#" aria-label="Instagram"><img src="assets/svg/streamline_instagram-solid.svg" alt="Instagram"></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4 data-i18n="footer_product">Product</h4>
+                    <ul>
+                        <li><a href="#features" data-i18n="features">Features</a></li>
+                        <li><a href="#plans" data-i18n="plans">Pricing</a></li>
+                        <li><a href="#" data-i18n="iot_device">IoT Device</a></li>
+                        <li><a href="https://safecar-web-app.vercel.app" target="_blank" data-i18n="web_platform">Web Platform</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 data-i18n="footer_company">Company</h4>
+                    <ul>
+                        <li><a href="#about" data-i18n="about">About Us</a></li>
+                        <li><a href="#team" data-i18n="team">Our Team</a></li>
+                        <li><a href="#contact" data-i18n="contact">Contact</a></li>
+                        <li><a href="#" data-i18n="careers">Careers</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 data-i18n="footer_legal">Legal</h4>
+                    <ul>
+                        <li><button id="termsBtn" class="footer-link-btn" data-i18n="terms_conditions">Terms & Conditions</button></li>
+                        <li><a href="#" data-i18n="privacy_policy">Privacy Policy</a></li>
+                        <li><a href="#" data-i18n="cookies_policy">Cookies Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p data-i18n="copyright">© 2025 SafeCar by MetaSoft. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<div id="termsModal" class="modal-overlay hidden" aria-hidden="true">
+    <div class="modal-content elevation-4" role="dialog" aria-modal="true">
+        <div class="modal-header">
+            <h3 data-i18n="terms_modal_title">Terms and Conditions of Service</h3>
+            <button id="closeModal" class="icon-btn-light" aria-label="Close Modal">
+                <span class="material-icons">close</span>
+            </button>
+        </div>
+        
+        <div class="modal-body scrollable-content">
+            <p class="last-updated"><strong data-i18n="last_updated">Last Updated:</strong> November 2025</p>
+
+            <h4 data-i18n="terms_1_title">1. Introduction</h4>
+            <p data-i18n="terms_1_text">Welcome to SafeCar, a service provided by MetaSoft. By using our IoT device, mobile application, or web dashboard, you agree to these terms tailored to ensure transparency and ethical use of technology.</p>
+
+            <h4 data-i18n="terms_2_title">2. Use of IoT Data</h4>
+            <p data-i18n="terms_2_text">SafeCar collects real-time telemetry from your vehicle's ECU (Engine Control Unit) solely for diagnostic and preventive maintenance purposes. We do not track your location history for advertising purposes.</p>
+
+            <h4 data-i18n="terms_3_title">3. User Responsibilities</h4>
+            <p data-i18n="terms_3_text">You are responsible for the proper installation of the OBD-II device. SafeCar provides diagnostic suggestions based on data, but final repair decisions must be validated by a certified professional.</p>
+
+            <h4 data-i18n="terms_4_title">4. Privacy & Ethics</h4>
+            <p data-i18n="terms_4_text">In accordance with the ACM/IEEE Software Engineering Code of Ethics, we commit to protecting your personal data. Your vehicle's health data is encrypted and will only be shared with workshops you explicitly authorize.</p>
+
+            <h4 data-i18n="terms_5_title">5. Liability</h4>
+            <p data-i18n="terms_5_text">SafeCar is an assistive tool. MetaSoft is not liable for mechanical failures not detected by the system or for accidents resulting from the misuse of the application while driving.</p>
+        </div>
+
+        <div class="modal-footer">
+            <button id="acceptTerms" class="btn btn-primary" data-i18n="accept_close">I Understand</button>
+        </div>
+    </div>
+</div>
+
+    <div id="termsModal" class="modal-overlay hidden">
+        <div class="modal-content elevation-4">
+            <div class="modal-header">
+                <h3 data-i18n="terms_conditions_title">Terms and Conditions</h3>
+                <button id="closeModal" class="icon-btn-light"><span class="material-icons">close</span></button>
+            </div>
+            <div class="modal-body">
+                <h4>1. Acceptance</h4>
+                <p>By using SafeCar, you agree to these terms.</p>
+                <h4>2. Privacy</h4>
+                <p>We collect vehicle data for diagnostic purposes only.</p>
+            </div>
+            <div class="modal-footer">
+                <button id="acceptTerms" class="btn btn-primary" data-i18n="accept">Accept</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/nav-menu.js"></script>
+    <script src="assets/js/i18n.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
 </html>
