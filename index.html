@@ -31,8 +31,8 @@
 
             <ul class="nav-links" id="nav-links">
                 <li><a href="#home" class="nav-link" data-i18n="home">Home</a></li>
-                <li><a href="#features" class="nav-link" data-i18n="features">Features</a></li>
-                <li><a href="#plans" class="nav-link" data-i18n="plans">For Workshops</a></li>
+                <li><a href="#drivers" class="nav-link" data-i18n="for_drivers">For Drivers</a></li>
+                <li><a href="#workshops" class="nav-link" data-i18n="for_workshops">For Workshops</a></li>
                 <li><a href="#about" class="nav-link" data-i18n="about">About</a></li>
                 <li><a href="#testimonials" class="nav-link" data-i18n="testimonials">Testimonials</a></li>
                 <li><a href="#team" class="nav-link" data-i18n="team">Team</a></li>
@@ -40,22 +40,23 @@
             </ul>
 
             <div class="nav-actions">
-    <a href="https://safecar-web-app.vercel.app" target="_blank" class="btn btn-sm btn-primary desktop-only" style="margin-right: 10px;">
-        
-        <span data-i18n="nav_login">Login</span>
-    </a>
+                <a href="https://safecar-web-app.vercel.app" target="_blank" class="btn btn-sm btn-primary desktop-only"
+                    style="margin-right: 10px;">
 
-    <button id="theme_toggle" class="icon-btn" aria-label="Toggle Dark Mode">
-        <span class="material-icons">dark_mode</span>
-    </button>
-    <button id="lang_toggle" class="icon-btn" aria-label="Change Language">
-        <span class="material-icons">language</span>
-        <span id="current_lang_label" class="lang-text">EN</span>
-    </button>
-    <button id="menu_btn" class="icon-btn mobile-only" aria-label="Open Menu">
-        <span class="material-icons">menu</span>
-    </button>
-</div>
+                    <span data-i18n="nav_login">Login</span>
+                </a>
+
+                <button id="theme_toggle" class="icon-btn" aria-label="Toggle Dark Mode">
+                    <span class="material-icons">dark_mode</span>
+                </button>
+                <button id="lang_toggle" class="icon-btn" aria-label="Change Language">
+                    <span class="material-icons">language</span>
+                    <span id="current_lang_label" class="lang-text">EN</span>
+                </button>
+                <button id="menu_btn" class="icon-btn mobile-only" aria-label="Open Menu">
+                    <span class="material-icons">menu</span>
+                </button>
+            </div>
         </nav>
     </header>
 
@@ -63,605 +64,770 @@
         <section id="home" class="hero">
             <div class="hero-overlay"></div>
             <div class="hero-content">
-    <h1 data-i18n="hero_title">Smart Data for Drivers & Mechanics</h1>
-    <p data-i18n="hero_desc">SafeCar gives you a complete view of your vehicle's status...</p>
-    
-    <div class="hero-actions">
-        <div class="action-group">
-    <p class="action-label" data-i18n="for_workshops">For Workshops</p>
-    
-    <a href="https://safecar-web-app.vercel.app" target="_blank" class="btn btn-primary full-width" data-i18n="access_dashboard">
-        <span class="material-icons" style="margin-right: 8px; font-size: 1.2rem;">login</span>
-        Access Dashboard
-    </a>
-</div>
+                <h1 data-i18n="hero_title">Smart Data for Drivers & Mechanics</h1>
+                <p data-i18n="hero_desc">SafeCar gives you a complete view of your vehicle's status...</p>
 
-        <div class="action-group">
-            <p class="action-label" data-i18n="for_drivers">For Drivers</p>
-            <div class="store-buttons">
-                <a href="https://play.google.com/store" target="_blank" class="btn btn-store" aria-label="Download on Google Play">
-                    <span class="material-icons">android</span>
-                    <span>Google Play</span>
-                </a>
-                <a href="https://apps.apple.com" target="_blank" class="btn btn-store" aria-label="Download on App Store">
-                    <span class="material-icons">phone_iphone</span> 
-                    <span>App Store</span>
-                </a>
+                <div class="hero-actions">
+                    <div class="action-group">
+                        <p class="action-label" data-i18n="for_workshops">For Workshops</p>
+
+                        <a href="https://safecar-web-app.vercel.app" target="_blank" class="btn btn-primary full-width"
+                            data-i18n="access_dashboard">
+                            <span class="material-icons" style="margin-right: 8px; font-size: 1.2rem;">login</span>
+                            Access Dashboard
+                        </a>
+                    </div>
+
+                    <div class="action-group">
+                        <p class="action-label" data-i18n="for_drivers">For Drivers</p>
+                        <div class="store-buttons">
+                            <a href="https://play.google.com/store" target="_blank" class="btn btn-store"
+                                aria-label="Download on Google Play">
+                                <span class="material-icons">android</span>
+                                <span>Google Play</span>
+                            </a>
+                            <a href="https://apps.apple.com" target="_blank" class="btn btn-store"
+                                aria-label="Download on App Store">
+                                <span class="material-icons">phone_iphone</span>
+                                <span>App Store</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-</div>
         </section>
 
-        <section id="features" class="section">
-    <div class="container">
-        <h2 class="section-title" data-i18n="benefits_title">Solutions for Everyone</h2>
-        <p class="section-subtitle" data-i18n="benefits_desc">Comprehensive IoT benefits for car owners and service providers.</p>
-
-        <div class="features-split">
-            
-            <div class="feature-col">
-                <h3 class="col-title">
-                    <span class="material-icons">directions_car</span> 
-                    <span data-i18n="for_drivers">For Drivers</span>
-                </h3>
-                
-                <div class="card feature-card">
-                    <span class="material-icons card-icon">notifications_active</span>
-                    <h4 data-i18n="benefit_1">Real-Time Alerts</h4>
-                    <p data-i18n="benefit_1_desc">Anticipate potential problems and receive early alerts to avoid breakdowns.</p>
+        <section id="drivers" class="section">
+            <div class="container">
+                <div class="audience-header">
+                    <span class="audience-badge drivers-badge">
+                        <span class="material-icons">directions_car</span>
+                        <span data-i18n="for_drivers">For Drivers</span>
+                    </span>
+                    <h2 class="section-title" data-i18n="drivers_title">Drive with Confidence</h2>
+                    <p class="section-subtitle" data-i18n="drivers_subtitle">Take control of your vehicle's health with
+                        smart monitoring and predictive maintenance.</p>
                 </div>
 
-                <div class="card feature-card">
-                    <span class="material-icons card-icon">event_available</span>
-                    <h4 data-i18n="benefit_driver_schedule">Easy Scheduling</h4>
-                    <p data-i18n="benefit_driver_schedule_desc">Book appointments with trusted workshops directly from the app instantly.</p>
+                <div class="features-grid">
+                    <div class="card feature-card highlight">
+                        <div class="card-icon-wrapper primary">
+                            <span class="material-icons">notifications_active</span>
+                        </div>
+                        <h3 data-i18n="benefit_1">Real-Time Alerts</h3>
+                        <p data-i18n="benefit_1_desc">Anticipate potential problems and receive early alerts to avoid
+                            breakdowns.</p>
+                    </div>
+
+                    <div class="card feature-card highlight">
+                        <div class="card-icon-wrapper primary">
+                            <span class="material-icons">event_available</span>
+                        </div>
+                        <h3 data-i18n="benefit_driver_schedule">Easy Scheduling</h3>
+                        <p data-i18n="benefit_driver_schedule_desc">Book appointments with trusted workshops directly
+                            from the app instantly.</p>
+                    </div>
+
+                    <div class="card feature-card highlight">
+                        <div class="card-icon-wrapper primary">
+                            <span class="material-icons">tips_and_updates</span>
+                        </div>
+                        <h3 data-i18n="benefit_driver_tips">Smart Recommendations</h3>
+                        <p data-i18n="benefit_driver_tips_desc">Get personalized maintenance tips based on your driving
+                            habits and mileage.</p>
+                    </div>
+
+                    <div class="card feature-card highlight">
+                        <div class="card-icon-wrapper primary">
+                            <span class="material-icons">savings</span>
+                        </div>
+                        <h3 data-i18n="benefit_driver_savings">Save Money</h3>
+                        <p data-i18n="benefit_driver_savings_desc">Prevent costly repairs with predictive maintenance
+                            and early problem detection.</p>
+                    </div>
+
+                    <div class="card feature-card highlight">
+                        <div class="card-icon-wrapper primary">
+                            <span class="material-icons">security</span>
+                        </div>
+                        <h3 data-i18n="benefit_driver_safety">Enhanced Safety</h3>
+                        <p data-i18n="benefit_driver_safety_desc">Monitor critical systems and receive safety alerts
+                            before they become dangerous.</p>
+                    </div>
+
+                    <div class="card feature-card highlight">
+                        <div class="card-icon-wrapper primary">
+                            <span class="material-icons">history</span>
+                        </div>
+                        <h3 data-i18n="benefit_driver_history">Complete History</h3>
+                        <p data-i18n="benefit_driver_history_desc">Keep a detailed record of your vehicle's maintenance
+                            and repairs history.</p>
+                    </div>
                 </div>
 
-                <div class="card feature-card">
-                    <span class="material-icons card-icon">tips_and_updates</span>
-                    <h4 data-i18n="benefit_driver_tips">Smart Recommendations</h4>
-                    <p data-i18n="benefit_driver_tips_desc">Get personalized maintenance tips based on your driving habits and mileage.</p>
-                </div>
             </div>
+        </section>
 
-            <div class="feature-col">
-                <h3 class="col-title">
-                    <span class="material-icons">build</span> 
-                    <span data-i18n="for_workshops">For Workshops</span>
-                </h3>
-
-                <div class="card feature-card">
-                    <span class="material-icons card-icon">insights</span>
-                    <h4 data-i18n="benefit_2">Smart Diagnostics</h4>
-                    <p data-i18n="benefit_2_desc">Access vehicle data remotely before the car arrives at your shop.</p>
+        <section id="workshops" class="section bg-alt">
+            <div class="container">
+                <div class="audience-header">
+                    <span class="audience-badge workshops-badge">
+                        <span class="material-icons">build</span>
+                        <span data-i18n="for_workshops">For Workshops</span>
+                    </span>
+                    <h2 class="section-title" data-i18n="workshops_title">Transform Your Workshop</h2>
+                    <p class="section-subtitle" data-i18n="workshops_subtitle">Increase efficiency, retain customers,
+                        and grow your business with smart diagnostic tools.</p>
                 </div>
 
-                <div class="card feature-card">
-                    <span class="material-icons card-icon">loyalty</span>
-                    <h4 data-i18n="benefit_retention">Client Retention</h4>
-                    <p data-i18n="benefit_retention_desc">Automated appointment scheduling keeps your bays full.</p>
+                <div class="features-grid mb-large">
+                    <div class="card feature-card workshop-card">
+                        <div class="card-icon-wrapper secondary">
+                            <span class="material-icons">insights</span>
+                        </div>
+                        <h3 data-i18n="benefit_2">Smart Diagnostics</h3>
+                        <p data-i18n="benefit_2_desc">Access vehicle data remotely before the car arrives at your shop.
+                        </p>
+                    </div>
+
+                    <div class="card feature-card workshop-card">
+                        <div class="card-icon-wrapper secondary">
+                            <span class="material-icons">loyalty</span>
+                        </div>
+                        <h3 data-i18n="benefit_retention">Client Retention</h3>
+                        <p data-i18n="benefit_retention_desc">Automated appointment scheduling keeps your bays full.</p>
+                    </div>
+
+                    <div class="card feature-card workshop-card">
+                        <div class="card-icon-wrapper secondary">
+                            <span class="material-icons">history_edu</span>
+                        </div>
+                        <h3 data-i18n="benefit_workshop_history">Digital Service History</h3>
+                        <p data-i18n="benefit_workshop_history_desc">Access the complete repair history of any vehicle
+                            to diagnose faster.</p>
+                    </div>
+
+                    <div class="card feature-card workshop-card">
+                        <div class="card-icon-wrapper secondary">
+                            <span class="material-icons">assessment</span>
+                        </div>
+                        <h3 data-i18n="benefit_workshop_reports">Automated Reports</h3>
+                        <p data-i18n="benefit_workshop_reports_desc">Generate professional diagnostic reports for your
+                            clients in one click.</p>
+                    </div>
                 </div>
 
-                <div class="card feature-card">
-                    <span class="material-icons card-icon">history_edu</span>
-                    <h4 data-i18n="benefit_workshop_history">Digital Service History</h4>
-                    <p data-i18n="benefit_workshop_history_desc">Access the complete repair history of any vehicle to diagnose faster.</p>
-                </div>
+                <div class="plans-section">
+                    <h3 class="subsection-title" data-i18n="plans_title">Choose Your Plan</h3>
+                    <p class="subsection-subtitle" data-i18n="plans_subtitle">Boost your garage efficiency. Choose a
+                        plan based on your team size.</p>
 
-                <div class="card feature-card">
-                    <span class="material-icons card-icon">assessment</span>
-                    <h4 data-i18n="benefit_workshop_reports">Automated Reports</h4>
-                    <p data-i18n="benefit_workshop_reports_desc">Generate professional diagnostic reports for your clients in one click.</p>
-                </div>
-            </div>
+                    <div class="pricing-grid">
 
-        </div>
-    </div>
-</section>
+                        <div class="pricing-card">
+                            <div class="card-header">
+                                <h3 data-i18n="plan_basic_title">BASIC</h3>
+                                <div class="price">S/29.00<span class="period" data-i18n="per_month">/month</span></div>
+                                <p class="plan-desc" data-i18n="plan_basic_desc">Basic plan ideal for small workshops
+                                </p>
+                            </div>
+                            <div class="card-body">
+                                <ul class="feature-list">
+                                    <li><span class="material-icons check">check</span> <span
+                                            data-i18n="feat_3_mechanics">Up to 3 mechanics</span></li>
+                                    <li><span class="material-icons check">check</span> <span
+                                            data-i18n="feat_basic_sched">Basic scheduling</span></li>
+                                    <li><span class="material-icons check">check</span> <span
+                                            data-i18n="feat_service_history">Service history</span></li>
+                                    <li><span class="material-icons check">check</span> <span
+                                            data-i18n="feat_email_support">Email support</span></li>
+                                </ul>
+                                <a href="https://safecar-web-app.vercel.app" target="_blank"
+                                    class="btn btn-outlined full-width" data-i18n="select_plan">Select Plan</a>
+                            </div>
+                        </div>
 
-        <section id="plans" class="section bg-alt">
-    <div class="container">
-        <h2 class="section-title" data-i18n="plans_title">Plans for Workshops</h2>
-        <p class="section-subtitle" data-i18n="plans_subtitle">Boost your garage efficiency. Choose a plan based on your team size.</p>
+                        <div class="pricing-card popular">
 
-        <div class="pricing-grid">
-            
-            <div class="pricing-card">
-                <div class="card-header">
-                    <h3 data-i18n="plan_basic_title">BASIC</h3>
-                    <div class="price">S/29.00<span class="period" data-i18n="per_month">/month</span></div>
-                    <p class="plan-desc" data-i18n="plan_basic_desc">Basic plan ideal for small workshops</p>
-                </div>
-                <div class="card-body">
-                    <ul class="feature-list">
-                        <li><span class="material-icons check">check</span> <span data-i18n="feat_3_mechanics">Up to 3 mechanics</span></li>
-                        <li><span class="material-icons check">check</span> <span data-i18n="feat_basic_sched">Basic scheduling</span></li>
-                        <li><span class="material-icons check">check</span> <span data-i18n="feat_service_history">Service history</span></li>
-                        <li><span class="material-icons check">check</span> <span data-i18n="feat_email_support">Email support</span></li>
-                    </ul>
-                    <a href="https://safecar-web-app.vercel.app" target="_blank" class="btn btn-outlined full-width" data-i18n="select_plan">Select Plan</a>
-                </div>
-            </div>
+                            <div class="card-header">
+                                <h3 data-i18n="plan_pro_title">PROFESSIONAL</h3>
+                                <div class="price">S/99.00<span class="period" data-i18n="per_month">/month</span></div>
+                                <p class="plan-desc" data-i18n="plan_pro_desc">Professional plan for growing workshops
+                                </p>
+                            </div>
+                            <div class="card-body">
+                                <ul class="feature-list">
+                                    <li><span class="material-icons check">check</span> <span
+                                            data-i18n="feat_10_mechanics">Up to 10 mechanics</span></li>
+                                    <li><span class="material-icons check">check</span> <span
+                                            data-i18n="feat_adv_sched">Advanced scheduling</span></li>
+                                    <li><span class="material-icons check">check</span> <span
+                                            data-i18n="feat_full_history">Complete service history</span></li>
+                                    <li><span class="material-icons check">check</span> <span
+                                            data-i18n="feat_reports">Reports & Analytics</span></li>
+                                    <li><span class="material-icons check">check</span> <span
+                                            data-i18n="feat_prio_support">Priority support</span></li>
+                                </ul>
+                                <a href="https://safecar-web-app.vercel.app" target="_blank"
+                                    class="btn btn-primary full-width" data-i18n="select_plan">Select Plan</a>
+                            </div>
+                        </div>
 
-            <div class="pricing-card popular">
-                
-                <div class="card-header">
-                    <h3 data-i18n="plan_pro_title">PROFESSIONAL</h3>
-                    <div class="price">S/99.00<span class="period" data-i18n="per_month">/month</span></div>
-                    <p class="plan-desc" data-i18n="plan_pro_desc">Professional plan for growing workshops</p>
-                </div>
-                <div class="card-body">
-                    <ul class="feature-list">
-                        <li><span class="material-icons check">check</span> <span data-i18n="feat_10_mechanics">Up to 10 mechanics</span></li>
-                        <li><span class="material-icons check">check</span> <span data-i18n="feat_adv_sched">Advanced scheduling</span></li>
-                        <li><span class="material-icons check">check</span> <span data-i18n="feat_full_history">Complete service history</span></li>
-                        <li><span class="material-icons check">check</span> <span data-i18n="feat_reports">Reports & Analytics</span></li>
-                        <li><span class="material-icons check">check</span> <span data-i18n="feat_prio_support">Priority support</span></li>
-                    </ul>
-                    <a href="https://safecar-web-app.vercel.app" target="_blank" class="btn btn-primary full-width" data-i18n="select_plan">Select Plan</a>
-                </div>
-            </div>
+                        <div class="pricing-card">
+                            <div class="card-header">
+                                <h3 data-i18n="plan_prem_title">PREMIUM</h3>
+                                <div class="price">S/299.00<span class="period" data-i18n="per_month">/month</span>
+                                </div>
+                                <p class="plan-desc" data-i18n="plan_prem_desc">Premium plan for large workshops</p>
+                            </div>
+                            <div class="card-body">
+                                <ul class="feature-list">
+                                    <li><span class="material-icons check">check</span> <span
+                                            data-i18n="feat_30_mechanics">Up to 30 mechanics</span></li>
+                                    <li><span class="material-icons check">check</span> <span
+                                            data-i18n="feat_comp_sched">Complete scheduling</span></li>
+                                    <li><span class="material-icons check">check</span> <span
+                                            data-i18n="feat_ulim_history">Unlimited history</span></li>
+                                    <li><span class="material-icons check">check</span> <span
+                                            data-i18n="feat_adv_bi">Advanced Reports & BI</span></li>
+                                    <li><span class="material-icons check">check</span> <span
+                                            data-i18n="feat_custom_int">Custom integrations</span></li>
+                                    <li><span class="material-icons check">check</span> <span
+                                            data-i18n="feat_247_support">24/7 Dedicated support</span></li>
+                                </ul>
+                                <a href="https://safecar-web-app.vercel.app" target="_blank"
+                                    class="btn btn-outlined full-width" data-i18n="select_plan">Select Plan</a>
+                            </div>
+                        </div>
 
-            <div class="pricing-card">
-                <div class="card-header">
-                    <h3 data-i18n="plan_prem_title">PREMIUM</h3>
-                    <div class="price">S/299.00<span class="period" data-i18n="per_month">/month</span></div>
-                    <p class="plan-desc" data-i18n="plan_prem_desc">Premium plan for large workshops</p>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <ul class="feature-list">
-                        <li><span class="material-icons check">check</span> <span data-i18n="feat_30_mechanics">Up to 30 mechanics</span></li>
-                        <li><span class="material-icons check">check</span> <span data-i18n="feat_comp_sched">Complete scheduling</span></li>
-                        <li><span class="material-icons check">check</span> <span data-i18n="feat_ulim_history">Unlimited history</span></li>
-                        <li><span class="material-icons check">check</span> <span data-i18n="feat_adv_bi">Advanced Reports & BI</span></li>
-                        <li><span class="material-icons check">check</span> <span data-i18n="feat_custom_int">Custom integrations</span></li>
-                        <li><span class="material-icons check">check</span> <span data-i18n="feat_247_support">24/7 Dedicated support</span></li>
-                    </ul>
-                    <a href="https://safecar-web-app.vercel.app" target="_blank" class="btn btn-outlined full-width" data-i18n="select_plan">Select Plan</a>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
+        </section>
 
         <section id="about" class="section">
-    <div class="container">
-        <div class="text-center mb-5">
-            <h2 class="section-title" data-i18n="about_title">How SafeCar Works</h2>
-            <p class="section-subtitle" data-i18n="about_subtitle">From detection to solution in 3 simple steps.</p>
-        </div>
-
-        <div class="process-grid">
-            <div class="process-card">
-                <div class="step-number">01</div>
-                <div class="icon-wrapper">
-                    <span class="material-icons">settings_input_hdmi</span>
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="section-title" data-i18n="about_title">How SafeCar Works</h2>
+                    <p class="section-subtitle" data-i18n="about_subtitle">From detection to solution in 3 simple steps.
+                    </p>
                 </div>
-                <h3 data-i18n="step_1_title">Install Device</h3>
-                <p data-i18n="step_1_desc">Implement our IoT devices in your cars to start monitoring performance.</p>
-            </div>
 
-            <div class="process-arrow">
-                <span class="material-icons">arrow_forward</span>
-            </div>
+                <div class="process-grid">
+                    <div class="process-card">
+                        <div class="step-number">01</div>
+                        <div class="icon-wrapper">
+                            <span class="material-icons">settings_input_hdmi</span>
+                        </div>
+                        <h3 data-i18n="step_1_title">Install Device</h3>
+                        <p data-i18n="step_1_desc">Implement our IoT devices in your cars to start monitoring
+                            performance.</p>
+                    </div>
 
-            <div class="process-card">
-                <div class="step-number">02</div>
-                <div class="icon-wrapper">
-                    <span class="material-icons">health_and_safety</span>
+                    <div class="process-arrow">
+                        <span class="material-icons">arrow_forward</span>
+                    </div>
+
+                    <div class="process-card">
+                        <div class="step-number">02</div>
+                        <div class="icon-wrapper">
+                            <span class="material-icons">health_and_safety</span>
+                        </div>
+                        <h3 data-i18n="step_2_title">Receive Diagnostics</h3>
+                        <p data-i18n="step_2_desc">Get alerts about potential failures or maintenance needs in
+                            real-time.</p>
+                    </div>
+
+                    <div class="process-arrow">
+                        <span class="material-icons">arrow_forward</span>
+                    </div>
+
+                    <div class="process-card">
+                        <div class="step-number">03</div>
+                        <div class="icon-wrapper">
+                            <span class="material-icons">calendar_month</span>
+                        </div>
+                        <h3 data-i18n="step_3_title">Schedule Service</h3>
+                        <p data-i18n="step_3_desc">Book an appointment at a trusted workshop directly through the app.
+                        </p>
+                    </div>
                 </div>
-                <h3 data-i18n="step_2_title">Receive Diagnostics</h3>
-                <p data-i18n="step_2_desc">Get alerts about potential failures or maintenance needs in real-time.</p>
-            </div>
 
-            <div class="process-arrow">
-                <span class="material-icons">arrow_forward</span>
-            </div>
-
-            <div class="process-card">
-                <div class="step-number">03</div>
-                <div class="icon-wrapper">
-                    <span class="material-icons">calendar_month</span>
+                <div class="video-showcase mt-large">
+                    <div class="video-wrapper elevation-4">
+                        <iframe src="https://www.youtube.com/embed/Ug90jxSF7eg" title="SafeCar Product Demo"
+                            allowfullscreen loading="lazy"></iframe>
+                    </div>
+                    <p class="text-center mt-2 caption-text" data-i18n="video_caption">Watch SafeCar in action</p>
                 </div>
-                <h3 data-i18n="step_3_title">Schedule Service</h3>
-                <p data-i18n="step_3_desc">Book an appointment at a trusted workshop directly through the app.</p>
             </div>
-        </div>
+        </section>
 
-        <div class="video-showcase mt-large">
-            <div class="video-wrapper elevation-4">
-                <iframe src="https://www.youtube.com/embed/Ug90jxSF7eg" title="SafeCar Product Demo" allowfullscreen loading="lazy"></iframe>
-            </div>
-            <p class="text-center mt-2 caption-text" data-i18n="video_caption">Watch SafeCar in action</p>
-        </div>
-    </div>
-</section>
+        <section id="mission" class="section bg-white">
+            <div class="container">
 
-<section id="mission" class="section bg-white">
-    <div class="container">
-        
-        <div class="corporate-header">
-            <span class="corp-label" data-i18n="startup_label">Corporate Profile</span>
-            <h2 class="corp-title">MetaSoft</h2>
-            <div class="corp-divider"></div>
-        </div>
-
-        <div class="corp-description">
-            <p data-i18n="startup_desc">
-                MetaSoft is a technology startup dedicated to creating smart digital solutions integrating web platforms and IoT. Our purpose is to accompany companies and organizations in their digital transformation processes, developing tools capable of transforming data into strategic knowledge to optimize processes, anticipate needs, and promote sustainability.
-            </p>
-        </div>
-
-        <div class="corp-grid">
-            
-            <div class="corp-card">
-                <div class="card-icon-wrapper">
-                    <span class="material-icons">engineering</span> </div>
-                <h3 data-i18n="mission_title">Our Mission</h3>
-                <p data-i18n="mission_text">
-                    To transform data into useful and actionable knowledge, offering innovative solutions that boost efficiency, empower decision-making, and generate real value for professionals, companies, and end-users.
-                </p>
-            </div>
-
-            <div class="corp-card">
-                <div class="card-icon-wrapper">
-                    <span class="material-icons">visibility</span>
+                <div class="corporate-header">
+                    <span class="corp-label" data-i18n="startup_label">Corporate Profile</span>
+                    <h2 class="corp-title">MetaSoft</h2>
+                    <div class="corp-divider"></div>
                 </div>
-                <h3 data-i18n="vision_title">Our Vision</h3>
-                <p data-i18n="vision_text">
-                    To be recognized as a leading startup in developing digital solutions based on web platforms and IoT, standing out for our ability to generate positive impact in different sectors and contribute to building a more connected, intelligent, and sustainable society.
-                </p>
-            </div>
 
-        </div>
-    </div>
-</section>
+                <div class="corp-description">
+                    <p data-i18n="startup_desc">
+                        MetaSoft is a technology startup dedicated to creating smart digital solutions integrating web
+                        platforms and IoT. Our purpose is to accompany companies and organizations in their digital
+                        transformation processes, developing tools capable of transforming data into strategic knowledge
+                        to optimize processes, anticipate needs, and promote sustainability.
+                    </p>
+                </div>
+
+                <div class="corp-grid">
+
+                    <div class="corp-card">
+                        <div class="card-icon-wrapper">
+                            <span class="material-icons">engineering</span>
+                        </div>
+                        <h3 data-i18n="mission_title">Our Mission</h3>
+                        <p data-i18n="mission_text">
+                            To transform data into useful and actionable knowledge, offering innovative solutions that
+                            boost efficiency, empower decision-making, and generate real value for professionals,
+                            companies, and end-users.
+                        </p>
+                    </div>
+
+                    <div class="corp-card">
+                        <div class="card-icon-wrapper">
+                            <span class="material-icons">visibility</span>
+                        </div>
+                        <h3 data-i18n="vision_title">Our Vision</h3>
+                        <p data-i18n="vision_text">
+                            To be recognized as a leading startup in developing digital solutions based on web platforms
+                            and IoT, standing out for our ability to generate positive impact in different sectors and
+                            contribute to building a more connected, intelligent, and sustainable society.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
 
 
         <section id="testimonials" class="section bg-alt">
-    <div class="container">
-        <h2 class="section-title" data-i18n="testimonials_title">Success Stories</h2>
-        <p class="section-subtitle" data-i18n="testimonials_subtitle">Real stories from our connected community.</p>
+            <div class="container">
+                <h2 class="section-title" data-i18n="testimonials_title">Success Stories</h2>
+                <p class="section-subtitle" data-i18n="testimonials_subtitle">Real stories from our connected community.
+                </p>
 
-        <div class="testimonials-grid">
-            <div class="testimonial-card">
-                <div class="quote-icon"><span class="material-icons">format_quote</span></div>
-                <p data-i18n="testimonial_1_text">"SafeCar alerted me about an engine overheat 2 days before a long trip. It saved my vacation!"</p>
-                <div class="user-info">
-                    <img src="assets/img/testimonial.webp" alt="User" class="avatar">
-                    <div>
-                        <h5 data-i18n="testimonial_1_name">Carlos L.</h5>
-                        <small data-i18n="role_driver">Driver</small>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="quote-icon"><span class="material-icons">format_quote</span></div>
+                        <p data-i18n="testimonial_1_text">"SafeCar alerted me about an engine overheat 2 days before a
+                            long trip. It saved my vacation!"</p>
+                        <div class="user-info">
+                            <img src="assets/img/testimonial.webp" alt="User" class="avatar">
+                            <div>
+                                <h5 data-i18n="testimonial_1_name">Carlos L.</h5>
+                                <small data-i18n="role_driver">Driver</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="quote-icon"><span class="material-icons">format_quote</span></div>
+                        <p data-i18n="testimonial_2_text">"Since using SafeCar, we receive cars with the diagnosis
+                            already made. Our efficiency improved by 40%."</p>
+                        <div class="user-info">
+                            <img src="assets/img/testimonial.webp" alt="User" class="avatar">
+                            <div>
+                                <h5 data-i18n="testimonial_2_name">Jorge R.</h5>
+                                <small data-i18n="role_workshop_owner">Workshop Owner</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="quote-icon"><span class="material-icons">format_quote</span></div>
+                        <p data-i18n="testimonial_3_text">"Managing 15 delivery vans was chaos. Now I know exactly which
+                            van needs maintenance."</p>
+                        <div class="user-info">
+                            <img src="assets/img/testimonial.webp" alt="User" class="avatar">
+                            <div>
+                                <h5 data-i18n="testimonial_3_name">Maria F.</h5>
+                                <small data-i18n="role_fleet_manager">Fleet Manager</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="quote-icon"><span class="material-icons">format_quote</span></div>
+                        <p data-i18n="testimonial_4_text">"The history reports help me explain repairs to clients
+                            clearly. Trust has increased significantly."</p>
+                        <div class="user-info">
+                            <img src="assets/img/testimonial.webp" alt="User" class="avatar">
+                            <div>
+                                <h5 data-i18n="testimonial_4_name">David S.</h5>
+                                <small data-i18n="role_mechanic">Senior Mechanic</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="quote-icon"><span class="material-icons">format_quote</span></div>
+                        <p data-i18n="testimonial_5_text">"For a taxi driver, a breakdown means losing money. SafeCar
+                            keeps my car running 24/7."</p>
+                        <div class="user-info">
+                            <img src="assets/img/testimonial.webp" alt="User" class="avatar">
+                            <div>
+                                <h5 data-i18n="testimonial_5_name">Roberto M.</h5>
+                                <small data-i18n="role_taxi">Taxi Driver</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="quote-icon"><span class="material-icons">format_quote</span></div>
+                        <p data-i18n="testimonial_6_text">"I monitor my rental fleet remotely. The predictive alerts
+                            reduce my maintenance costs by half."</p>
+                        <div class="user-info">
+                            <img src="assets/img/testimonial.webp" alt="User" class="avatar">
+                            <div>
+                                <h5 data-i18n="testimonial_6_name">Elena G.</h5>
+                                <small data-i18n="role_rental">Rental Agency Owner</small>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <div class="testimonial-card">
-                <div class="quote-icon"><span class="material-icons">format_quote</span></div>
-                <p data-i18n="testimonial_2_text">"Since using SafeCar, we receive cars with the diagnosis already made. Our efficiency improved by 40%."</p>
-                <div class="user-info">
-                    <img src="assets/img/testimonial.webp" alt="User" class="avatar">
-                    <div>
-                        <h5 data-i18n="testimonial_2_name">Jorge R.</h5>
-                        <small data-i18n="role_workshop_owner">Workshop Owner</small>
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimonial-card">
-                <div class="quote-icon"><span class="material-icons">format_quote</span></div>
-                <p data-i18n="testimonial_3_text">"Managing 15 delivery vans was chaos. Now I know exactly which van needs maintenance."</p>
-                <div class="user-info">
-                    <img src="assets/img/testimonial.webp" alt="User" class="avatar">
-                    <div>
-                        <h5 data-i18n="testimonial_3_name">Maria F.</h5>
-                        <small data-i18n="role_fleet_manager">Fleet Manager</small>
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimonial-card">
-                <div class="quote-icon"><span class="material-icons">format_quote</span></div>
-                <p data-i18n="testimonial_4_text">"The history reports help me explain repairs to clients clearly. Trust has increased significantly."</p>
-                <div class="user-info">
-                    <img src="assets/img/testimonial.webp" alt="User" class="avatar">
-                    <div>
-                        <h5 data-i18n="testimonial_4_name">David S.</h5>
-                        <small data-i18n="role_mechanic">Senior Mechanic</small>
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimonial-card">
-                <div class="quote-icon"><span class="material-icons">format_quote</span></div>
-                <p data-i18n="testimonial_5_text">"For a taxi driver, a breakdown means losing money. SafeCar keeps my car running 24/7."</p>
-                <div class="user-info">
-                    <img src="assets/img/testimonial.webp" alt="User" class="avatar">
-                    <div>
-                        <h5 data-i18n="testimonial_5_name">Roberto M.</h5>
-                        <small data-i18n="role_taxi">Taxi Driver</small>
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimonial-card">
-                <div class="quote-icon"><span class="material-icons">format_quote</span></div>
-                <p data-i18n="testimonial_6_text">"I monitor my rental fleet remotely. The predictive alerts reduce my maintenance costs by half."</p>
-                <div class="user-info">
-                    <img src="assets/img/testimonial.webp" alt="User" class="avatar">
-                    <div>
-                        <h5 data-i18n="testimonial_6_name">Elena G.</h5>
-                        <small data-i18n="role_rental">Rental Agency Owner</small>
-                    </div>
-                </div>
-            </div>
+        </section>
         </div>
-    </div>
-</section>
-    </div>
 
 
 
-</section>
+        </section>
 
         <section id="team" class="section">
-    <div class="container">
-        <h2 class="section-title" data-i18n="team_title">Our Team</h2>
-        <p class="section-subtitle" data-i18n="team_subtitle">The minds behind the innovation.</p>
+            <div class="container">
+                <h2 class="section-title" data-i18n="team_title">Our Team</h2>
+                <p class="section-subtitle" data-i18n="team_subtitle">The minds behind the innovation.</p>
 
-        <div class="team-grid">
-            <div class="team-member">
-                <div class="member-photo-wrapper">
-                    <img src="assets/img/Anaely-photo.jpeg" alt="Anaely">
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="member-photo-wrapper">
+                            <img src="assets/img/Anaely-photo.jpeg" alt="Anaely">
+                        </div>
+                        <h4>Anaely</h4>
+                        <span class="role" data-i18n="role_sw_engineer">Software Engineer</span>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="member-photo-wrapper">
+                            <img src="assets/img/gonzalo-quedena.jpeg" alt="Gonzalo Quedena">
+                        </div>
+                        <h4>Gonzalo Quedena</h4>
+                        <span class="role" data-i18n="role_sw_engineer">Software Engineer</span>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="member-photo-wrapper">
+                            <img src="assets/img/gustavo-aguirre.jpeg" alt="Gustavo Aguirre">
+                        </div>
+                        <h4>Gustavo Aguirre</h4>
+                        <span class="role" data-i18n="role_sw_engineer">Software Engineer</span>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="member-photo-wrapper">
+                            <img src="assets/img/hardie-holguin.jpeg" alt="Hardie Holguin">
+                        </div>
+                        <h4>Hardie Holguin</h4>
+                        <span class="role" data-i18n="role_sw_engineer">Software Engineer</span>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="member-photo-wrapper">
+                            <img src="assets/img/javier-irigoyen.jpeg" alt="Javier Irigoyen">
+                        </div>
+                        <h4>Javier Irigoyen</h4>
+                        <span class="role" data-i18n="role_sw_engineer">Software Engineer</span>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="member-photo-wrapper">
+                            <img src="assets/img/kenyi-mendoza.jpeg" alt="Kenyi Mendoza">
+                        </div>
+                        <h4>Kenyi Mendoza</h4>
+                        <span class="role" data-i18n="role_sw_engineer">Software Engineer</span>
+                    </div>
                 </div>
-                <h4>Anaely</h4>
-                <span class="role" data-i18n="role_sw_engineer">Software Engineer</span>
+
             </div>
 
-            <div class="team-member">
-                <div class="member-photo-wrapper">
-                    <img src="assets/img/gonzalo-quedena.jpeg" alt="Gonzalo Quedena">
+            <div class="team-video-section">
+                <div class="divider-line"></div>
+
+                <div class="text-center mb-4">
+                    <h3 class="subsection-title" data-i18n="about_team_title">About the Team</h3>
+                    <p class="section-subtitle" data-i18n="about_team_desc">Discover the passion and process behind
+                        SafeCar.</p>
                 </div>
-                <h4>Gonzalo Quedena</h4>
-                <span class="role" data-i18n="role_sw_engineer">Software Engineer</span>
-            </div>
 
-            <div class="team-member">
-                <div class="member-photo-wrapper">
-                    <img src="assets/img/gustavo-aguirre.jpeg" alt="Gustavo Aguirre">
-                </div>
-                <h4>Gustavo Aguirre</h4>
-                <span class="role" data-i18n="role_sw_engineer">Software Engineer</span>
-            </div>
-
-            <div class="team-member">
-                <div class="member-photo-wrapper">
-                    <img src="assets/img/hardie-holguin.jpeg" alt="Hardie Holguin">
-                </div>
-                <h4>Hardie Holguin</h4>
-                <span class="role" data-i18n="role_sw_engineer">Software Engineer</span>
-            </div>
-
-            <div class="team-member">
-                <div class="member-photo-wrapper">
-                    <img src="assets/img/javier-irigoyen.jpeg" alt="Javier Irigoyen">
-                </div>
-                <h4>Javier Irigoyen</h4>
-                <span class="role" data-i18n="role_sw_engineer">Software Engineer</span>
-            </div>
-
-            <div class="team-member">
-                <div class="member-photo-wrapper">
-                    <img src="assets/img/kenyi-mendoza.jpeg" alt="Kenyi Mendoza">
-                </div>
-                <h4>Kenyi Mendoza</h4>
-                <span class="role" data-i18n="role_sw_engineer">Software Engineer</span>
-            </div>
-        </div>
-
-        </div>
-
-        <div class="team-video-section">
-            <div class="divider-line"></div>
-
-            <div class="text-center mb-4">
-                <h3 class="subsection-title" data-i18n="about_team_title">About the Team</h3>
-                <p class="section-subtitle" data-i18n="about_team_desc">Discover the passion and process behind SafeCar.</p>
-            </div>
-
-            <div class="video-showcase">
-                <div class="video-wrapper elevation-4">
-                    <iframe src="https://www.youtube.com/embed/pIR9UxDGdzA" title="About the Team Video" allowfullscreen loading="lazy"></iframe>
+                <div class="video-showcase">
+                    <div class="video-wrapper elevation-4">
+                        <iframe src="https://www.youtube.com/embed/pIR9UxDGdzA" title="About the Team Video"
+                            allowfullscreen loading="lazy"></iframe>
+                    </div>
                 </div>
             </div>
-        </div>
 
-    </div>
-</section>
-    </div>
-</section>
-
+            </div>
+        </section>
         <section id="contact" class="section bg-alt">
-    <div class="container">
-        <div class="contact-wrapper elevation-3">
-            
-            <div class="contact-info-col">
-                <div>
-                    <h2 data-i18n="contact_title">Contact Us</h2>
-                    <p data-i18n="contact_subtitle">Have questions about our device or plans? We're here to help.</p>
-                </div>
+            <div class="container">
+                <div class="contact-wrapper elevation-3">
 
-                <div class="info-list">
-                    <div class="info-item">
-                        <div class="icon-circle">
-                            <span class="material-icons">email</span>
-                        </div>
+                    <div class="contact-info-col">
                         <div>
-                            <span class="label">Email</span>
-                            <p>contact@safecar.com</p>
+                            <h2 data-i18n="contact_title">Contact Us</h2>
+                            <p data-i18n="contact_subtitle">Have questions about our device or plans? We're here to
+                                help.</p>
+                        </div>
+
+                        <div class="info-list">
+                            <div class="info-item">
+                                <div class="icon-circle">
+                                    <span class="material-icons">email</span>
+                                </div>
+                                <div>
+                                    <span class="label">Email</span>
+                                    <p>contact@safecar.com</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="icon-circle">
+                                    <span class="material-icons">location_on</span>
+                                </div>
+                                <div>
+                                    <span class="label">Location</span>
+                                    <p>Lima, Peru</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="info-footer">
+                            <p><span class="material-icons small-icon">schedule</span> <span
+                                    data-i18n="response_time">We usually reply within 24 hours.</span></p>
                         </div>
                     </div>
-                    <div class="info-item">
-                        <div class="icon-circle">
-                            <span class="material-icons">location_on</span>
-                        </div>
-                        <div>
-                            <span class="label">Location</span>
-                            <p>Lima, Peru</p>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="info-footer">
-                    <p><span class="material-icons small-icon">schedule</span> <span data-i18n="response_time">We usually reply within 24 hours.</span></p>
+                    <div class="contact-form-col">
+                        <form class="material-form">
+                            <div class="form-row">
+                                <div class="input-group">
+                                    <input type="text" id="name" required placeholder=" ">
+                                    <label for="name" data-i18n="form_name">Name</label>
+                                </div>
+                                <div class="input-group">
+                                    <input type="email" id="email" required placeholder=" ">
+                                    <label for="email" data-i18n="form_email">Email</label>
+                                </div>
+                            </div>
+
+                            <div class="input-group select-group">
+                                <select id="subject" required>
+                                    <option value="" disabled selected hidden></option>
+                                    <option value="general" data-i18n="opt_general">General Inquiry</option>
+                                    <option value="support" data-i18n="opt_support">Technical Support</option>
+                                    <option value="sales" data-i18n="opt_sales">Sales / Workshops</option>
+                                </select>
+                                <label for="subject" data-i18n="form_subject">Subject</label>
+                                <span class="material-icons select-arrow">expand_more</span>
+                            </div>
+
+                            <div class="input-group">
+                                <textarea id="message" rows="4" required placeholder=" "></textarea>
+                                <label for="message" data-i18n="form_message">Message</label>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary full-width">
+                                <span data-i18n="form_send">Send Message</span>
+                                <span class="material-icons" style="margin-left: 8px; font-size: 1.2rem;">send</span>
+                            </button>
+                        </form>
+                    </div>
+
                 </div>
             </div>
-
-            <div class="contact-form-col">
-                <form class="material-form">
-                    <div class="form-row">
-                        <div class="input-group">
-                            <input type="text" id="name" required placeholder=" ">
-                            <label for="name" data-i18n="form_name">Name</label>
+        </section>
+        <section class="final-cta-section">
+            <div class="container">
+                <div class="cta-split-container">
+                    <div class="cta-segment drivers-cta">
+                        <div class="cta-content">
+                            <div class="cta-icon">
+                                <span class="material-icons">directions_car</span>
+                            </div>
+                            <h3 data-i18n="final_drivers_title">Ready to Drive Smarter?</h3>
+                            <p data-i18n="final_drivers_desc">Join thousands of drivers who trust SafeCar to keep their
+                                vehicles running smoothly and safely.</p>
+                            <div class="cta-actions">
+                                <div class="store-buttons-final">
+                                    <a href="https://play.google.com/store" target="_blank"
+                                        class="btn-store-final google-play">
+                                        <span class="material-icons">android</span>
+                                        <div class="store-info">
+                                            <small>Download on</small>
+                                            <span>Google Play</span>
+                                        </div>
+                                    </a>
+                                    <a href="https://apps.apple.com" target="_blank" class="btn-store-final app-store">
+                                        <span class="material-icons">phone_iphone</span>
+                                        <div class="store-info">
+                                            <small>Download on</small>
+                                            <span>App Store</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <p class="cta-note" data-i18n="drivers_free_note">Free download • No subscription
+                                    required</p>
+                            </div>
                         </div>
-                        <div class="input-group">
-                            <input type="email" id="email" required placeholder=" ">
-                            <label for="email" data-i18n="form_email">Email</label>
+                    </div>
+
+                    <div class="cta-segment workshops-cta">
+                        <div class="cta-content">
+                            <div class="cta-icon">
+                                <span class="material-icons">build</span>
+                            </div>
+                            <h3 data-i18n="final_workshops_title">Transform Your Workshop Today</h3>
+                            <p data-i18n="final_workshops_desc">Increase efficiency by 40% and boost customer
+                                satisfaction with our smart diagnostic platform.</p>
+                            <div class="cta-actions">
+                                <a href="https://safecar-web-app.vercel.app" target="_blank" class="btn-primary-large">
+                                    <span class="material-icons">login</span>
+                                    <span data-i18n="start_free_trial">Get Started Now</span>
+                                </a>
+                                <p class="cta-note" data-i18n="workshops_trial_note">Contact us for a personalized plan</p>
+                                <div class="workshop-features">
+                                    <div class="feature-check">
+                                        <span class="material-icons">check_circle</span>
+                                        <span data-i18n="trial_feature_1">Complete dashboard access</span>
+                                    </div>
+                                    <div class="feature-check">
+                                        <span class="material-icons">check_circle</span>
+                                        <span data-i18n="trial_feature_2">Unlimited diagnostics</span>
+                                    </div>
+                                    <div class="feature-check">
+                                        <span class="material-icons">check_circle</span>
+                                        <span data-i18n="trial_feature_3">Priority support</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="input-group select-group">
-                        <select id="subject" required>
-                            <option value="" disabled selected hidden></option> <option value="general" data-i18n="opt_general">General Inquiry</option>
-                            <option value="support" data-i18n="opt_support">Technical Support</option>
-                            <option value="sales" data-i18n="opt_sales">Sales / Workshops</option>
-                        </select>
-                        <label for="subject" data-i18n="form_subject">Subject</label>
-                        <span class="material-icons select-arrow">expand_more</span>
-                    </div>
-
-                    <div class="input-group">
-                        <textarea id="message" rows="4" required placeholder=" "></textarea>
-                        <label for="message" data-i18n="form_message">Message</label>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary full-width">
-                        <span data-i18n="form_send">Send Message</span>
-                        <span class="material-icons" style="margin-left: 8px; font-size: 1.2rem;">send</span>
-                    </button>
-                </form>
+                </div>
             </div>
-
-        </div>
-    </div>
-</section>
+        </section>
     </main>
 
     <footer class="app-footer">
-    <div class="container">
-        <div class="footer-top">
-            <div class="footer-grid">
-                
-                <div class="footer-col brand-col">
-                    <a href="#" class="footer-logo">
-                        <img src="assets/img/safecar-logo.webp" alt="SafeCar Logo">
-                        <span>SafeCar</span>
-                    </a>
-                    <p data-i18n="footer_mission">Transforming vehicle data into actionable insights for a safer, smarter driving experience.</p>
-                    <div class="social-links">
-                        <a href="#" aria-label="Facebook"><img src="assets/svg/ri_facebook-fill.svg" alt="Facebook"></a>
-                        <a href="#" aria-label="Twitter"><img src="assets/svg/mdi_twitter.svg" alt="Twitter"></a>
-                        <a href="#" aria-label="Instagram"><img src="assets/svg/streamline_instagram-solid.svg" alt="Instagram"></a>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-grid">
+
+                    <div class="footer-col brand-col">
+                        <a href="#" class="footer-logo">
+                            <img src="assets/img/safecar-logo.webp" alt="SafeCar Logo">
+                            <span>SafeCar</span>
+                        </a>
+                        <p data-i18n="footer_mission">Transforming vehicle data into actionable insights for a safer,
+                            smarter driving experience.</p>
+                        <div class="social-links">
+                            <a href="#" aria-label="Facebook"><img src="assets/svg/ri_facebook-fill.svg"
+                                    alt="Facebook"></a>
+                            <a href="#" aria-label="Twitter"><img src="assets/svg/mdi_twitter.svg" alt="Twitter"></a>
+                            <a href="#" aria-label="Instagram"><img src="assets/svg/streamline_instagram-solid.svg"
+                                    alt="Instagram"></a>
+                        </div>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4 data-i18n="footer_product">Product</h4>
+                        <ul>
+                            <li><a href="#drivers" data-i18n="for_drivers">For Drivers</a></li>
+                            <li><a href="#workshops" data-i18n="for_workshops">For Workshops</a></li>
+                            <li><a href="#" data-i18n="iot_device">IoT Device</a></li>
+                            <li><a href="https://safecar-web-app.vercel.app" target="_blank"
+                                    data-i18n="web_platform">Web Platform</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4 data-i18n="footer_company">Company</h4>
+                        <ul>
+                            <li><a href="#about" data-i18n="about">About Us</a></li>
+                            <li><a href="#team" data-i18n="team">Our Team</a></li>
+                            <li><a href="#testimonials" data-i18n="testimonials">Testimonials</a></li>
+                            <li><a href="#" data-i18n="careers">Careers</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4 data-i18n="footer_legal">Legal</h4>
+                        <ul>
+                            <li><button id="termsBtn" class="footer-link-btn" data-i18n="terms_conditions">Terms &
+                                    Conditions</button></li>
+                            <li><a href="#" data-i18n="privacy_policy">Privacy Policy</a></li>
+                            <li><a href="#" data-i18n="cookies_policy">Cookies Policy</a></li>
+                        </ul>
                     </div>
                 </div>
+            </div>
 
-                <div class="footer-col">
-                    <h4 data-i18n="footer_product">Product</h4>
-                    <ul>
-                        <li><a href="#features" data-i18n="features">Features</a></li>
-                        <li><a href="#plans" data-i18n="plans">Pricing</a></li>
-                        <li><a href="#" data-i18n="iot_device">IoT Device</a></li>
-                        <li><a href="https://safecar-web-app.vercel.app" target="_blank" data-i18n="web_platform">Web Platform</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-col">
-                    <h4 data-i18n="footer_company">Company</h4>
-                    <ul>
-                        <li><a href="#about" data-i18n="about">About Us</a></li>
-                        <li><a href="#team" data-i18n="team">Our Team</a></li>
-                        <li><a href="#contact" data-i18n="contact">Contact</a></li>
-                        <li><a href="#" data-i18n="careers">Careers</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-col">
-                    <h4 data-i18n="footer_legal">Legal</h4>
-                    <ul>
-                        <li><button id="termsBtn" class="footer-link-btn" data-i18n="terms_conditions">Terms & Conditions</button></li>
-                        <li><a href="#" data-i18n="privacy_policy">Privacy Policy</a></li>
-                        <li><a href="#" data-i18n="cookies_policy">Cookies Policy</a></li>
-                    </ul>
-                </div>
+            <div class="footer-bottom">
+                <p data-i18n="copyright">© 2025 SafeCar by MetaSoft. All rights reserved.</p>
             </div>
         </div>
+    </footer>
 
-        <div class="footer-bottom">
-            <p data-i18n="copyright">© 2025 SafeCar by MetaSoft. All rights reserved.</p>
-        </div>
-    </div>
-</footer>
-
-<div id="termsModal" class="modal-overlay hidden" aria-hidden="true">
-    <div class="modal-content elevation-4" role="dialog" aria-modal="true">
-        <div class="modal-header">
-            <h3 data-i18n="terms_modal_title">Terms and Conditions of Service</h3>
-            <button id="closeModal" class="icon-btn-light" aria-label="Close Modal">
-                <span class="material-icons">close</span>
-            </button>
-        </div>
-        
-        <div class="modal-body scrollable-content">
-            <p class="last-updated"><strong data-i18n="last_updated">Last Updated:</strong> November 2025</p>
-
-            <h4 data-i18n="terms_1_title">1. Introduction</h4>
-            <p data-i18n="terms_1_text">Welcome to SafeCar, a service provided by MetaSoft. By using our IoT device, mobile application, or web dashboard, you agree to these terms tailored to ensure transparency and ethical use of technology.</p>
-
-            <h4 data-i18n="terms_2_title">2. Use of IoT Data</h4>
-            <p data-i18n="terms_2_text">SafeCar collects real-time telemetry from your vehicle's ECU (Engine Control Unit) solely for diagnostic and preventive maintenance purposes. We do not track your location history for advertising purposes.</p>
-
-            <h4 data-i18n="terms_3_title">3. User Responsibilities</h4>
-            <p data-i18n="terms_3_text">You are responsible for the proper installation of the OBD-II device. SafeCar provides diagnostic suggestions based on data, but final repair decisions must be validated by a certified professional.</p>
-
-            <h4 data-i18n="terms_4_title">4. Privacy & Ethics</h4>
-            <p data-i18n="terms_4_text">In accordance with the ACM/IEEE Software Engineering Code of Ethics, we commit to protecting your personal data. Your vehicle's health data is encrypted and will only be shared with workshops you explicitly authorize.</p>
-
-            <h4 data-i18n="terms_5_title">5. Liability</h4>
-            <p data-i18n="terms_5_text">SafeCar is an assistive tool. MetaSoft is not liable for mechanical failures not detected by the system or for accidents resulting from the misuse of the application while driving.</p>
-        </div>
-
-        <div class="modal-footer">
-            <button id="acceptTerms" class="btn btn-primary" data-i18n="accept_close">I Understand</button>
-        </div>
-    </div>
-</div>
-
-    <div id="termsModal" class="modal-overlay hidden">
-        <div class="modal-content elevation-4">
+    <div id="termsModal" class="modal-overlay hidden" aria-hidden="true">
+        <div class="modal-content elevation-4" role="dialog" aria-modal="true">
             <div class="modal-header">
-                <h3 data-i18n="terms_conditions_title">Terms and Conditions</h3>
-                <button id="closeModal" class="icon-btn-light"><span class="material-icons">close</span></button>
+                <h3 data-i18n="terms_modal_title">Terms and Conditions of Service</h3>
+                <button id="closeModal" class="icon-btn-light" aria-label="Close Modal">
+                    <span class="material-icons">close</span>
+                </button>
             </div>
-            <div class="modal-body">
-                <h4>1. Acceptance</h4>
-                <p>By using SafeCar, you agree to these terms.</p>
-                <h4>2. Privacy</h4>
-                <p>We collect vehicle data for diagnostic purposes only.</p>
+
+            <div class="modal-body scrollable-content">
+                <p class="last-updated"><strong data-i18n="last_updated">Last Updated:</strong> November 2025</p>
+
+                <h4 data-i18n="terms_1_title">1. Introduction</h4>
+                <p data-i18n="terms_1_text">Welcome to SafeCar, a service provided by MetaSoft. By using our IoT device,
+                    mobile application, or web dashboard, you agree to these terms tailored to ensure transparency and
+                    ethical use of technology.</p>
+
+                <h4 data-i18n="terms_2_title">2. Use of IoT Data</h4>
+                <p data-i18n="terms_2_text">SafeCar collects real-time telemetry from your vehicle's ECU (Engine Control
+                    Unit) solely for diagnostic and preventive maintenance purposes. We do not track your location
+                    history for advertising purposes.</p>
+
+                <h4 data-i18n="terms_3_title">3. User Responsibilities</h4>
+                <p data-i18n="terms_3_text">You are responsible for the proper installation of the OBD-II device.
+                    SafeCar provides diagnostic suggestions based on data, but final repair decisions must be validated
+                    by a certified professional.</p>
+
+                <h4 data-i18n="terms_4_title">4. Privacy & Ethics</h4>
+                <p data-i18n="terms_4_text">In accordance with the ACM/IEEE Software Engineering Code of Ethics, we
+                    commit to protecting your personal data. Your vehicle's health data is encrypted and will only be
+                    shared with workshops you explicitly authorize.</p>
+
+                <h4 data-i18n="terms_5_title">5. Liability</h4>
+                <p data-i18n="terms_5_text">SafeCar is an assistive tool. MetaSoft is not liable for mechanical failures
+                    not detected by the system or for accidents resulting from the misuse of the application while
+                    driving.</p>
             </div>
+
             <div class="modal-footer">
-                <button id="acceptTerms" class="btn btn-primary" data-i18n="accept">Accept</button>
+                <button id="acceptTerms" class="btn btn-primary" data-i18n="accept_close">I Understand</button>
             </div>
         </div>
     </div>

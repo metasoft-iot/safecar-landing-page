@@ -17,6 +17,35 @@
   "for_workshops": "For Workshops",
   "for_drivers": "For Drivers",
 
+  "drivers_title": "Drive with Confidence",
+  "drivers_subtitle": "Take control of your vehicle's health with smart monitoring and predictive maintenance.",
+  "drivers_cta_title": "Ready to Get Started?",
+  "drivers_cta_desc": "Download the SafeCar app and start monitoring your vehicle today.",
+
+  "workshops_title": "Transform Your Workshop",
+  "workshops_subtitle": "Increase efficiency, retain customers, and grow your business with smart diagnostic tools.",
+  "workshops_cta_title": "Ready to Modernize Your Workshop?",
+  "workshops_cta_desc": "Join hundreds of workshops already using SafeCar to improve their service quality.",
+
+  "benefit_driver_savings": "Save Money",
+  "benefit_driver_savings_desc": "Prevent costly repairs with predictive maintenance and early problem detection.",
+  "benefit_driver_safety": "Enhanced Safety",
+  "benefit_driver_safety_desc": "Monitor critical systems and receive safety alerts before they become dangerous.",
+  "benefit_driver_history": "Complete History",
+  "benefit_driver_history_desc": "Keep a detailed record of your vehicle's maintenance and repairs history.",
+
+  "final_drivers_title": "Ready to Drive Smarter?",
+  "final_drivers_desc": "Join thousands of drivers who trust SafeCar to keep their vehicles running smoothly and safely.",
+  "drivers_free_note": "Free download • No subscription required",
+
+  "final_workshops_title": "Transform Your Workshop Today",
+  "final_workshops_desc": "Increase efficiency by 40% and boost customer satisfaction with our smart diagnostic platform.",
+  "start_free_trial": "Get Started Now",
+  "workshops_trial_note": "Contact us for a personalized plan",
+  "trial_feature_1": "Complete dashboard access",
+  "trial_feature_2": "Unlimited diagnostics",
+  "trial_feature_3": "Priority support",
+
   "benefits_title": "Solutions for Everyone",
   "benefits_desc": "Comprehensive IoT benefits for car owners and service providers.",
 

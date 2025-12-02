@@ -17,6 +17,35 @@
   "for_workshops": "Para Talleres",
   "for_drivers": "Para Conductores",
 
+  "drivers_title": "Conduce con Confianza",
+  "drivers_subtitle": "Toma control de la salud de tu vehículo con monitoreo inteligente y mantenimiento predictivo.",
+  "drivers_cta_title": "¿Listo para Empezar?",
+  "drivers_cta_desc": "Descarga la app de SafeCar y comienza a monitorear tu vehículo hoy mismo.",
+
+  "workshops_title": "Transforma tu Taller",
+  "workshops_subtitle": "Aumenta la eficiencia, retén clientes y haz crecer tu negocio con herramientas de diagnóstico inteligentes.",
+  "workshops_cta_title": "¿Listo para Modernizar tu Taller?",
+  "workshops_cta_desc": "Únete a cientos de talleres que ya usan SafeCar para mejorar la calidad de su servicio.",
+
+  "benefit_driver_savings": "Ahorra Dinero",
+  "benefit_driver_savings_desc": "Previene reparaciones costosas con mantenimiento predictivo y detección temprana de problemas.",
+  "benefit_driver_safety": "Seguridad Mejorada",
+  "benefit_driver_safety_desc": "Monitorea sistemas críticos y recibe alertas de seguridad antes de que se vuelvan peligrosos.",
+  "benefit_driver_history": "Historial Completo",
+  "benefit_driver_history_desc": "Mantén un registro detallado del mantenimiento y reparaciones de tu vehículo.",
+
+  "final_drivers_title": "¿Listo para Conducir Inteligentemente?",
+  "final_drivers_desc": "Únete a miles de conductores que confían en SafeCar para mantener sus vehículos funcionando suave y seguramente.",
+  "drivers_free_note": "Descarga gratuita • Sin suscripción requerida",
+
+  "final_workshops_title": "Transforma tu Taller Hoy",
+  "final_workshops_desc": "Aumenta la eficiencia en un 40% y mejora la satisfacción del cliente con nuestra plataforma de diagnóstico inteligente.",
+  "start_free_trial": "Empezar Ahora",
+  "workshops_trial_note": "Contáctanos para un plan personalizado",
+  "trial_feature_1": "Acceso completo al dashboard",
+  "trial_feature_2": "Diagnósticos ilimitados",
+  "trial_feature_3": "Soporte prioritario",
+
   "benefits_title": "Soluciones para Todos",
   "benefits_desc": "Beneficios integrales de IoT para propietarios de autos y talleres de servicio.",
 
